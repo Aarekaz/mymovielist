@@ -150,9 +150,9 @@ class App extends React.Component {
           <div style={{fontSize: "4rem", float: "left", width: "20%"}}>
               <Icon link onClick={this.onRefreshClick} name='home' />
           </div>
-          <div style={{fontFamily: 'Impact, sans-serif', fontSize: "4rem", float: "left", width: "60%"}}> Recommender System Playground </div>
+          <div style={{fontFamily: 'Impact, sans-serif', fontSize: "4rem", float: "left", width: "60%"}}> MyMovieList </div>
           <div style={{fontFamily: "Palatino Linotype, Book Antiqua, Palatino, serif", fontSize: "2rem", float: "left", width: "20%"}}>
-            Yoonki Jeong
+            AAPS
             <a href='https://github.com/yoongi0428'><Icon name='github' /></a>
             <a href='https://yoonki-j.info/'><Icon name='wordpress' /></a>
           </div>
