@@ -21,7 +21,10 @@ On your own environment, install required packages by `pip install -r requiremen
 ## Back-end
 
 First, we build a minimal back-end server with [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-Back-end server 1) initializes database so that API server can load data and train recommender models, 2) handles requests from front-end by communicating with API server and database.
+Back-end server 
+
+1) initializes database so that API server can load data and train recommender models, 
+2) handles requests from front-end by communicating with API server and database.
 
 Here, we initialize database with ML-100k, which is small but popular dataset with 100k from 1,000 users and 1,700 items.
 We provide pre-built database (`app.db`), however, if you want to build your own database, please follow the code below.
