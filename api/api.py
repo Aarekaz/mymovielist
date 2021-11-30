@@ -22,10 +22,10 @@ def recommend():
         user_context = data['context']
         model = data['model']
 
-        wrapper.set_model(model)
-        result = wrapper.recommend(user_context)
+        wrapper.set_model(model) 
+        result = wrapper.recommend(user_context) 
 
-        return jsonify({'result': result})
+        return jsonify({'result': result}) 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000, debug=False)
