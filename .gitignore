@@ -1,6 +1,0 @@
-venv/
-react-front/node_modules/
-backend/__pycache__/
-api/recommend/__pycache__/
-backend/app/__pycache__/
-.vscode/settings.json
