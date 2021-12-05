@@ -1,128 +1,273 @@
-# Fullstack RecSys Project
+<div align="center">
 
-<img src="img/main_page.png"> </br>
-<a><img src="img/flask.png" width="130"></a>
-<a><img src="img/react.png" width="130">
-<a><img src="img/semantic_ui.png" width="80"></a>
-<a><img src="img/pytorch.svg" width="150"></a>
-<a><img src="img/numpy.svg" width="150"></a>
+<h1>Movie Recomendation System with Sentiment Analysis</h1>
+<img src="https://img.shields.io/badge/Python-3.7.3-brown" />
+<img src="https://img.shields.io/badge/Frontend-ReactJS-orange" />
+<img src="https://img.shields.io/badge/BackendAPI-Flask-yellow" />
+<img src="https://img.shields.io/badge/OtherAPI-TMDB-red" />
+<img src="https://img.shields.io/badge/Deployment-Heroku-blue" />
+</div>
 
-This repository is a toy project integrating machine learning with database, front-end and back-end.
-We aim to build a small web service to provide top-K movie recommendation from user profile.
-To do this, we implement back-end and database server with Flask, front-end with React and recommedation API with PyTorch and Numpy.
+## About
 
-# Setups
+<b>KVG Movie Zone</b> is an AI based web application in which you can search for any Hollywood Movie. This application will provide all the information related to that movie, does <b>sentiment analysis</b> on the movie reviews and the most interesting part, this application will provide you the top 10 <b>movie recommendations</b> based on your search.<br/>
 
-## **Requirements**
+<b>ReactJS</b> was used for frontend which was deployed using <b>firebase hosting</b> and a <b>Flask API</b> was deployed using <b>Docker</b> container on <b>Heroku</b> to serve the machine learning models to the Frontend.
 
-This project requires packages such as Flask, PyTorch and numpy. Please check detailed list in `requirements.txt`.
-On your own environment, install required packages by `pip install -r requirements.txt`
+This application uses <b>Content Based Movie Recommendation</b> to recommend movies to the user.<b>TMDB</b> API was used to retrieve all the information related to the movie and its cast. <b>Web Scraping</b> was done on <b>IMDB</b> website to get the reviews related to the searched movie. Sentiments analysis is done using a machine learning model trained on a sample of IMDB Dataset.<br/>
 
-## Back-end
+<b>Deployed Web Application Link: </b>https://kvg-movie-zone.web.app/ <br/>
+<b>Deployed Flask API Link: </b>https://kvgmrs-api.herokuapp.com/
 
-First, we build a minimal back-end server with [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-Back-end server 1) initializes database so that API server can load data and train recommender models, 2) handles requests from front-end by communicating with API server and database.
+## Demo
 
-Here, we initialize database with ML-100k, which is small but popular dataset with 100k from 1,000 users and 1,700 items.
-We provide pre-built database (`app.db`), however, if you want to build your own database, please follow the code below.
+<div align="center">
+<img src="./readme_assets/demo.gif" alt="demo" />
+</div>
 
-1. Initialize DB model by following scripts.
+## Architecture
 
-Model not working properly
+<div align="center">
+<img src="./readme_assets/architecture.png" alt="architecture" />
+</div>
 
-```bash
-flask db init &&
-flask db migrate &&
-flask db upgrade
-```
+## How to generate TMDB API Key?
 
-1. Initialize ML-100k into database.
+1. Login to you your tmdb account: https://www.themoviedb.org/ or create one if you dont have.
+2. Then open https://www.themoviedb.org/settings/api link and create your api key by filing all the necessary information.
+3. <b>IMPORTANT:</b> After generating the TMDB API KEY, replace "ENTER YOUR TMDB_API_KEY" with your generated key in the API and FRONTEND code.
 
-```bash
-cd backend && python initialize_ml100k_db.py
-```
+## TMDB API End Points
 
-## Front-end
+1. BASE URL: https://api.themoviedb.org/3
+2. FOR MOVIE DATA: https://api.themoviedb.org/3/movie/{tmdb_movie_id}?api_key={TMDB_API_KEY}
+3. FOR MOVIE CAST DATA: https://api.themoviedb.org/3/movie/{tmdb_movie_id}/credits?api_key={TMDB_API_KEY}
+   <b>NOTE: </b>Please do refer the documentation at the BASE URL for better understanding.
 
-Front-end is built with [react](https://reactjs.org/) and [semantic-ui-react](https://react.semantic-ui.com/).
-You need npm to build and run react.
+## Flask API end points
 
-To build front-end, run `npm install`.
-
-## Recommendation API server
-
-In this project, we aim to build recommender taht can provide recommendation to new users with their profile (Unseen in training but not cold-start).
-API server 1) trains a recommender model offline with database and save, 2) responds to the recommendation request from back-end server.
-
-For now, we provide simple non-neural similarity and nearest neighbor models, EASE and ItemKNN.
-
-- **EASE**: Harald Steck, Embarrassingly Shallow Autoencoders for Sparse Data. _WWW_ 2019. [Link](https://arxiv.org/pdf/1905.03375)
-- **ItemKNN**: Jun Wang et al., Unifying user-based and item-based collaborative filtering approaches by similarity fusion. _SIGIR_ 2006. [Link](http://web4.cs.ucl.ac.uk/staff/jun.wang/papers/2006-sigir06-unifycf.pdf)
-
-To train and save recommender offline, run
+1. To get recommendations: https://kvgmrs-api.herokuapp.com/recommend_movie
 
 ```
-cd ./api &&
-python fit_offline.py --model MODEL_NAME --save_dir PATH_TO_SAVE_MODEL
+Data to be sent in POST request:
+{
+    movie_name:"The Avengers",
+    number_of_recommendations:"10"
+}
+
+Data Returned by the API in JSON format:
+{
+    input_movie:{
+        movie_id:TMDB_MOVIE_ID
+    },
+    recommendations:[
+        {
+            rank:1,
+            movie_id:TMDB_MOVIE_ID
+        },
+        {
+            rank:2,
+            movie_id:TMDB_MOVIE_ID
+        },
+        .
+        .
+        .
+    ]
+}
 ```
 
-- model: name of a model to train (currently, EASE & ItemKNN are available.)
-- save_dir: path to save model checkpoint
+2. To get Movie Reviews with Sentiments: https://kvgmrs-api.herokuapp.com/movie_reviews_sentiment
 
-# Run
+```
+Data to be sent in POST request:
+{
+    movie_imdb_id:"MOVIE_IMDB_ID"
+}
 
-To make the all components work together, we have to run **API**, **back-end**, **front-end** servers.
-
-## API Server
-
-To run API server,
-
-```bash
-cd ./api && python api.py
+Data Returned by the API in JSON format:
+[
+    {
+        id: 1,
+        content: "THE REVIEW",
+        sentiment: "SENTIMENT FOR THE REVIEW"
+    },
+    {
+        id: 2,
+        content: "THE REVIEW",
+        sentiment: "SENTIMENT FOR THE REVIEW"
+    },
+    .
+    .
+    .
+    10
+]
 ```
 
-By default, API server is run on `0.0.0.0:8000`.
+<b>NOTE: </b>The error messages are returned in the following format:
 
-## Back-end
-
-To run back-end server,
-
-```bash
-cd ./backend && flask run
+```
+{
+    error:"Content of ERROR Message"
+}
 ```
 
-By default, back-end server is run on `127.0.0.1:5000`.
+## Steps to run the React Project
 
-## Front-end
+1. Clone or download the repository in your local machine.
+2. Open command prompt in the following folder `FRONTEND/kvg-mrs`
+3. Install all the npm packages
 
-To run front-end,
-
-```bash
-cd ./react-front && npm start
+```
+npm install
 ```
 
-You can specify host and port in `react-front/.env`. By default, front-end server is run on `127.0.0.1:5052`.
+4. Since the Flask API is already deployed on Heroku no need to run the Flask API in your local machine to start the React frontend. You can start the react application using the following command:
 
-Edit name and personal links (github, blog) in `react-front/src/App.js:155`.
+```
+npm start
+```
 
-## Bind back-end & front-end
+## Steps to run the Flask API
 
-You can run front-end and back-end script together using `concurrently`, which helps you run scripts parallel.
+1. Clone or download the repository and open command prompt in `API` folder.
+2. Create a virtual environemt
 
-You can install `concurrently` by `npm install -g concurrently`.
-In `react-front/package.json`, add binding script (e.g. `"start-all": "concurrently \"react-scripts start\" \"cd ../backend && flask run\""`).
+```
+mkvirtualenv environment_name
+```
 
-Now, `npm run-script start-all` runs both back-end and front-end.
+3. Install all the dependencies
 
-# TODO
+```
+pip install -r requirements.txt
+```
 
-- [ ] Show movie metadata on click.
-- [ ] Add SOTA neural and non-neural recommenders.
-- [ ] Fancier front-end (Header, Footer, etc.)
+4. Run the app.py file
 
-# Reference
+```
+python app.py
+```
 
-1. [How To Create a React + Flask Project](https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project)
-2. [Image Recommendations with PyTorch + Flask + PostgreSQL + Heroku deployment](https://towardsdatascience.com/image-recommendations-with-pytorch-flask-postgresql-heroku-deployment-206682d06c6b)
-3. [Build a fully production ready machine learning app with Python Django, React, and Docker](https://towardsdatascience.com/build-a-fully-production-ready-machine-learning-app-with-python-django-react-and-docker-c4d938c251e5)
-4. [tfrs-movierec-serving](https://github.com/hojinYang/tfrs-movierec-serving)
+The API will be running at http://127.0.0.1:5000/
+
+<b>NOTE: </b>You can run the Flask API and the React Frontend in parallel and can use for development by replacing the baseURL,present in `FRONTEND/kvg-mrs/src/api/recommenderapi.js`, with the Flask API running link.
+
+## Steps to Dockerize and Deploy the Flask API on Heroku
+
+1. Clone or download the repository and open command prompt in `API` folder.
+2. Create your docker account at https://hub.docker.com
+3. Download the docker desktop based on you windows version from the official website of Dockers and login to the docker desktop.
+4. Start the Docker desktop in you machine.
+5. The Dockerfile for dockerinzing this Flask API is already present in the API folder.
+6. Open command prompt in API folder and run the below mentioned commands:
+7. Building the Image:
+
+```
+docker build -t ENTER_YOUR_OWN_TAG_NAME .
+```
+
+It will take some time for the execution of the above command. After execution of the above command you can see the docker image details using the following command:
+
+```
+docker images
+```
+
+8. Install Heroku CLI in your local machine.
+9. Login to your account using follwing command:
+
+```
+heroku login
+```
+
+10. Run the following commands for deplyment. Logging into heroku container:
+
+```
+heroku container:login
+```
+
+11. Create a app in heroku:
+
+```
+heroku create YOUR_APP_NAME
+```
+
+11. Pushing the docker image into heroku:
+
+```
+heroku container:push web --app YOUR_APP_NAME
+```
+
+12. Releasing the web app:
+
+```
+heroku container:release web --app YOUR_APP_NAME
+```
+
+That's it, you can see your API running at `https://YOUR_APP_NAME.herokuapp.com/`
+
+## Steps to Dockerize and run the Flask API in local machine
+
+1. Clone or download the repository and open command prompt in `API` folder.
+2. Create your docker account at https://hub.docker.com
+3. Download the docker desktop based on you windows version from the official website of Dockers and login to the docker desktop.
+4. Start the Docker desktop in you machine.
+5. Replace the code present in Dockerfile with the code present in localhost_docker_code.txt.
+6. Open command prompt in API folder and run the below mentioned commands:
+7. Building the Image:
+
+```
+docker build -t ENTER_YOUR_OWN_TAG_NAME .
+```
+
+8. Run the docker container:
+
+```
+docker run -d -p 5000:5000 PREVIOUSLY_ENTERED_TAG_NAME
+```
+
+After execution of the above command you can notice the Flask API running at http://localhost:5000
+
+## Tech Stack Used
+
+<div align="center">
+
+<table>
+    <tr>
+        <td><img src="./readme_assets/react.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/firebase.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/docker.png" width="200px" height="200px" /></td>
+    </tr>
+    <tr>
+        <td><img src="./readme_assets/flask.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/gunicorn.png" width="200px" height="200px" /></td>
+        <td><img src="./readme_assets/heroku.jpg" width="200px" height="200px" /></td>
+    </tr>
+</table>
+
+</div>
+
+## Referred Article Links
+
+For Movie Recommendation System
+
+1. [Article 1](https://towardsdatascience.com/how-to-build-from-scratch-a-content-based-movie-recommender-with-natural-language-processing-25ad400eb243)
+2. [Article 2](https://analyticsindiamag.com/how-to-build-a-content-based-movie-recommendation-system-in-python/)
+
+For Deployment Using Dockers
+
+1. [Article 1](https://medium.com/analytics-vidhya/dockerize-your-python-flask-application-and-deploy-it-onto-heroku-650b7a605cc9)
+2. [Article 2](https://pythonise.com/series/learning-flask/building-a-flask-app-with-docker-compose)
+3. [Article 3](https://betterprogramming.pub/create-a-running-docker-container-with-gunicorn-and-flask-dcd98fddb8e0)
+4. [Article 4](https://itnext.io/setup-flask-project-using-docker-and-gunicorn-4dcaaa829620)
+5. [Article 5](https://philchen.com/2019/07/09/a-scalable-flask-application-using-gunicorn-on-ubuntu-18-04-in-docker)
+
+## Dataset Links
+
+1. [IMDB 5000 Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset)
+2. movies_metadata.csv and credits.csv from [Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
+3. Remaining Datasets are generated using `MovieRecommendationDatasetPreparation.ipynb` in `MovieRecommendationCodes folder`
+4. [IMDB 50k Movie Reviews Dataset](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+
+<div align="center">
+<b>Please do ⭐ this repo if you liked my work</b>
+</div>
