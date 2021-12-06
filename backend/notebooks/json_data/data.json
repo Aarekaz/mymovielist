@@ -1,0 +1,52 @@
+[
+    {
+        "Title": "Graduate, The (1967)",
+        "Genre": "Comedy|Drama|Romance",
+        "Distance": 0.376625015427554
+    },
+    {
+        "Title": "Silence of the Lambs, The (1991)",
+        "Genre": "Crime|Horror|Thriller",
+        "Distance": 0.3760779733863252
+    },
+    {
+        "Title": "One Flew Over the Cuckoo's Nest (1975)",
+        "Genre": "Drama",
+        "Distance": 0.3721204039017476
+    },
+    {
+        "Title": "Casablanca (1942)",
+        "Genre": "Drama|Romance",
+        "Distance": 0.3687987791666254
+    },
+    {
+        "Title": "Wizard of Oz, The (1939)",
+        "Genre": "Adventure|Children|Fantasy|Musical",
+        "Distance": 0.36713044480822377
+    },
+    {
+        "Title": "Fargo (1996)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.3576079786316181
+    },
+    {
+        "Title": "Citizen Kane (1941)",
+        "Genre": "Drama|Mystery",
+        "Distance": 0.35159053056579803
+    },
+    {
+        "Title": "Shining, The (1980)",
+        "Genre": "Horror",
+        "Distance": 0.3448716157491668
+    },
+    {
+        "Title": "Vertigo (1958)",
+        "Genre": "Drama|Mystery|Romance|Thriller",
+        "Distance": 0.34081839276304715
+    },
+    {
+        "Title": "Rear Window (1954)",
+        "Genre": "Mystery|Thriller",
+        "Distance": 0.3048986012729029
+    }
+]

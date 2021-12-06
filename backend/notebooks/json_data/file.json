@@ -1,0 +1,38 @@
+{
+    "Title": {
+        "1": "Graduate, The (1967)",
+        "2": "Silence of the Lambs, The (1991)",
+        "3": "One Flew Over the Cuckoo's Nest (1975)",
+        "4": "Casablanca (1942)",
+        "5": "Wizard of Oz, The (1939)",
+        "6": "Fargo (1996)",
+        "7": "Citizen Kane (1941)",
+        "8": "Shining, The (1980)",
+        "9": "Vertigo (1958)",
+        "10": "Rear Window (1954)"
+    },
+    "Genre": {
+        "1": "Comedy|Drama|Romance",
+        "2": "Crime|Horror|Thriller",
+        "3": "Drama",
+        "4": "Drama|Romance",
+        "5": "Adventure|Children|Fantasy|Musical",
+        "6": "Comedy|Crime|Drama|Thriller",
+        "7": "Drama|Mystery",
+        "8": "Horror",
+        "9": "Drama|Mystery|Romance|Thriller",
+        "10": "Mystery|Thriller"
+    },
+    "Distance": {
+        "1": 0.3766250154,
+        "2": 0.3760779734,
+        "3": 0.3721204039,
+        "4": 0.3687987792,
+        "5": 0.3671304448,
+        "6": 0.3576079786,
+        "7": 0.3515905306,
+        "8": 0.3448716157,
+        "9": 0.3408183928,
+        "10": 0.3048986013
+    }
+}
