@@ -1,0 +1,18 @@
+@use "../../scss/" as *;
+
+.logo{
+    font-size: 3rem;
+    font-weight: 600;
+
+    @include flex(center, unset);
+
+    img {
+        margin-right: 12px;
+        width: 45px;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+    }
+}

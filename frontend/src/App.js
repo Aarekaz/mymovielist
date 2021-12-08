@@ -1,33 +1,28 @@
-import React from "react";
-import "./App.css";
-import FetchMovie from "./components/Movie";
+import 'swiper/swiper.min.css';
+import './assets/boxicons-2.0.7/css/boxicons.min.css';
+
+import './App.scss';
+
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+
+import Routes from './config/Routes';
 
 function App() {
-  return (
-    <div className="App">
-      <FetchMovie />
-    </div>
+  return(
+    <BrowserRouter>
+        <Route render={props => (
+          <>
+              <Header {...props}/>
+              <Routes/>
+              <Footer/>
+          </>
+        )}/>
+    </BrowserRouter>
   );
-}
+  }
+  
 
 export default App;
-
-// import React, { Component } from "react";
-// import "./App.css";
-// import FetchMovie from "./components/FetchMovie";
-
-// class App extends Component {
-//   state = {
-//     visible: true
-//   };
-
-//   render() {
-//     return (
-//       <div className="App">
-//         <FetchMovie />
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
