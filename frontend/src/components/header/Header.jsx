@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import './header.scss';
 
 import { Link, useLocation } from 'react-router-dom';
@@ -22,10 +22,24 @@ const headerNav =[
 
 const Header =() => {
 
-    const { pathname } = useLocation();
-    const headerRef = useRef(null);
+    const { pathname } =useLocation();
+    const headerRef =useRef(null);
 
-    const active = headerNav.findIndex(e => e.path === pathname);
+    const active =headerNav.findIndex(e => e.path === pathname);
+
+    useEffect(() => {
+        const shrinkHeader = () => {
+            if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                headerRef.current.classList.add('shrink');
+            } else {
+                headerRef.current.classList.remove('shrink');
+            }
+        }
+        window.addEventListener('scroll', shrinkHeader);
+        return () => {
+            window.removeEventListener('scroll', shrinkHeader);
+        };
+    }, []);
 
 
 
@@ -40,7 +54,7 @@ const Header =() => {
                     {
                         headerNav.map((e, i) => (
                             <li key= {i} className={`${i === active ? 'active' : ''}`}>
-                                <Link to={e.pah}>
+                                <Link to={e.path}>
                                     {e.display}
                                 </Link>
                             </li>
