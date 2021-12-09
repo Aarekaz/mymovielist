@@ -1,52 +1,52 @@
 [
     {
-        "Title": "Fifth Element, The (1997)",
-        "Genre": "Action|Adventure|Comedy|Sci-Fi",
-        "Distance": 0.29567449034646087
+        "Title": "Departed, The (2006)",
+        "Genre": "Crime|Drama|Thriller",
+        "Distance": 0.34705902842222613
     },
     {
-        "Title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
-        "Genre": "Action|Adventure",
-        "Distance": 0.2880987715642196
+        "Title": "Seven (a.k.a. Se7en) (1995)",
+        "Genre": "Mystery|Thriller",
+        "Distance": 0.33550617177033504
     },
     {
-        "Title": "Terminator, The (1984)",
-        "Genre": "Action|Sci-Fi|Thriller",
-        "Distance": 0.2844563232661409
+        "Title": "Fargo (1996)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.3310207119537921
     },
     {
-        "Title": "Star Wars: Episode IV - A New Hope (1977)",
-        "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.2820733798041789
+        "Title": "Shawshank Redemption, The (1994)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.323174212764624
     },
     {
-        "Title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
-        "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.2814031813799892
+        "Title": "Usual Suspects, The (1995)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.32168668014072466
     },
     {
-        "Title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
-        "Genre": "Mystery|Sci-Fi|Thriller",
-        "Distance": 0.28022603487813236
+        "Title": "Reservoir Dogs (1992)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.31654211099381235
     },
     {
-        "Title": "Aliens (1986)",
-        "Genre": "Action|Adventure|Horror|Sci-Fi",
-        "Distance": 0.2789796117975435
+        "Title": "Silence of the Lambs, The (1991)",
+        "Genre": "Crime|Horror|Thriller",
+        "Distance": 0.3164233524430121
     },
     {
-        "Title": "Matrix, The (1999)",
-        "Genre": "Action|Sci-Fi|Thriller",
-        "Distance": 0.2774445237469426
+        "Title": "Godfather: Part II, The (1974)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.31633865862707355
     },
     {
         "Title": "Pulp Fiction (1994)",
         "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.27675978334255147
+        "Distance": 0.27995345605813626
     },
     {
-        "Title": "Alien (1979)",
-        "Genre": "Horror|Sci-Fi",
-        "Distance": 0.25039196649472817
+        "Title": "Godfather, The (1972)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.27040110110738935
     }
 ]
