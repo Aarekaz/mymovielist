@@ -1,52 +1,52 @@
 [
     {
-        "Title": "Graduate, The (1967)",
-        "Genre": "Comedy|Drama|Romance",
-        "Distance": 0.376625015427554
+        "Title": "Fifth Element, The (1997)",
+        "Genre": "Action|Adventure|Comedy|Sci-Fi",
+        "Distance": 0.29567449034646087
     },
     {
-        "Title": "Silence of the Lambs, The (1991)",
-        "Genre": "Crime|Horror|Thriller",
-        "Distance": 0.3760779733863252
+        "Title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+        "Genre": "Action|Adventure",
+        "Distance": 0.2880987715642196
     },
     {
-        "Title": "One Flew Over the Cuckoo's Nest (1975)",
-        "Genre": "Drama",
-        "Distance": 0.3721204039017476
+        "Title": "Terminator, The (1984)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.2844563232661409
     },
     {
-        "Title": "Casablanca (1942)",
-        "Genre": "Drama|Romance",
-        "Distance": 0.3687987791666254
+        "Title": "Star Wars: Episode IV - A New Hope (1977)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.2820733798041789
     },
     {
-        "Title": "Wizard of Oz, The (1939)",
-        "Genre": "Adventure|Children|Fantasy|Musical",
-        "Distance": 0.36713044480822377
+        "Title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.2814031813799892
     },
     {
-        "Title": "Fargo (1996)",
+        "Title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+        "Genre": "Mystery|Sci-Fi|Thriller",
+        "Distance": 0.28022603487813236
+    },
+    {
+        "Title": "Aliens (1986)",
+        "Genre": "Action|Adventure|Horror|Sci-Fi",
+        "Distance": 0.2789796117975435
+    },
+    {
+        "Title": "Matrix, The (1999)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.2774445237469426
+    },
+    {
+        "Title": "Pulp Fiction (1994)",
         "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.3576079786316181
+        "Distance": 0.27675978334255147
     },
     {
-        "Title": "Citizen Kane (1941)",
-        "Genre": "Drama|Mystery",
-        "Distance": 0.35159053056579803
-    },
-    {
-        "Title": "Shining, The (1980)",
-        "Genre": "Horror",
-        "Distance": 0.3448716157491668
-    },
-    {
-        "Title": "Vertigo (1958)",
-        "Genre": "Drama|Mystery|Romance|Thriller",
-        "Distance": 0.34081839276304715
-    },
-    {
-        "Title": "Rear Window (1954)",
-        "Genre": "Mystery|Thriller",
-        "Distance": 0.3048986012729029
+        "Title": "Alien (1979)",
+        "Genre": "Horror|Sci-Fi",
+        "Distance": 0.25039196649472817
     }
 ]
