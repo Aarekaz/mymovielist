@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import './modal.scss';
 
@@ -20,9 +20,9 @@ const Modal = props => {
     );
 }
 
-Modal.PropTypes ={
-    active: PropTypes.bool,
-    id: PropTypes.string
+Modal.propTypes ={
+    active: propTypes.bool,
+    id: propTypes.string
 }
 
 export const ModalContent = props => {
@@ -46,8 +46,8 @@ export const ModalContent = props => {
     )
 }
 
-ModalContent.PropTypes ={
-    onClose: PropTypes.func
+ModalContent.propTypes ={
+    onClose: propTypes.func
 }
 
 export default Modal;
