@@ -14,7 +14,7 @@ const Movie = () => {
   return (
     <div>
       {movies.map((movie) => (
-        <ul id={movie?.Distance}>
+        <ul id={movie.Distance}>
           <li>{movie.Title} </li>
           <li>{movie.Genre} </li>
           <li>{movie.Distance} </li>
