@@ -2,7 +2,7 @@ import axiosClient from "./axiosClient";
 
 export const category={
     movie: 'movie',
-    shows: 'shows'
+    shows: 'tv'
 }
 
 export const movieType ={
@@ -11,7 +11,7 @@ export const movieType ={
     popular: 'popular'
 }
 
-export const showsType ={
+export const tvType ={
     top_rated: 'top_rated',
     popular: 'popular',
     on_air: 'on_air'
@@ -22,8 +22,8 @@ const mmlApi = {
         const url = 'movie/' + movieType[type];
         return axiosClient.get(url, params);
     },
-    getShowsList: (type, params) =>{
-        const url = 'shows/' + showsType[type];
+    getTvList: (type, params) =>{
+        const url = 'tv/' + tvType[type];
         return axiosClient.get(url, params);
     },
     //getMoviesList: (type, params) =>{
@@ -53,4 +53,3 @@ const mmlApi = {
 }
 
 export default mmlApi;
-
