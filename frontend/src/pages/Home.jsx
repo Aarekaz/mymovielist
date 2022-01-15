@@ -11,7 +11,8 @@ import { category, movieType, tvType } from '../api/mmlApi';
 const Home = () => {
     return (
         <React.Fragment>
-            <HeroSlide/>
+            <HeroSlide />
+            
             <div className="container">
                 <div className="section mb-3">
                     <div className="section__header mb-2">
