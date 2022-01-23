@@ -73,13 +73,41 @@ const Detail = () => {
                 </div>
                 <CastList id={item.id} />
               </div>
+
+              <div className="provider">
+                <div className="section__header">
+                  <h2>Where to watch</h2>
+                </div>
+                <div className="providers">
+                  {providers?.buy?.map((item, i) => (
+                    <div key={i} className="casts__item">
+                      <div
+                        className="casts__item__img"
+                        style={{
+                          backgroundImage: `url(${apiConfig.originalImage(
+                            item.logo_path
+                          )})`,
+                        }}
+                      ></div>
+                      <p className="casts__item__name">{item.provider_name}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* {providers?.buy?.map((item) => (
+                  <div>
+                    <img src={apiConfig.originalImage(item.logo_path)} alt="" />
+                    {item.provider_name}
+                  </div>
+                ))} */}
+              </div>
               {/* <ul> */}
-              {providers?.buy?.map((item) => (
+              {/* {providers?.buy?.map((item) => (
                 <div>
                   <img src={apiConfig.originalImage(item.logo_path)} alt="" />
                   {item.provider_name}
                 </div>
-              ))}
+              ))} */}
               {/* </ul> */}
             </div>
           </div>
