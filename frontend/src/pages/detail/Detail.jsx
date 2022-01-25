@@ -8,6 +8,7 @@ import "./detail.scss";
 import CastList from "./CastList";
 import VideoList from "./VideoList";
 import propTypes from "prop-types";
+import Button, { OutlineButton } from "../../components/button/Button";
 
 import MovieList from "../../components/movie-list/MovieList";
 
@@ -93,7 +94,15 @@ const Detail = () => {
                     </div>
                   ))}
                 </div>
-
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://www.2embed.ru/embed/tmdb/movie?id=" + item.id
+                    )
+                  }
+                >
+                  Stream Unofficiallly
+                </Button>
                 {/* {providers?.buy?.map((item) => (
                   <div>
                     <img src={apiConfig.originalImage(item.logo_path)} alt="" />
