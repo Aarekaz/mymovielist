@@ -64,7 +64,7 @@ const Header = () => {
         <form onSubmit={goToSearch}>
           <Input
             type="text"
-            placeholder="Enter keyword"
+            placeholder="Enter movie/show name"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />

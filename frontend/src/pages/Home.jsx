@@ -37,7 +37,7 @@ const Home = () => {
                 <div className="section mb-3">
                     <div className="section__header mb-2">
                         <h2>Trending Shows</h2>
-                        <Link to="/tv">
+                        <Link to="tv/">
                             <OutlineButton className="small">View more</OutlineButton>
                         </Link>
                     </div>
@@ -47,7 +47,7 @@ const Home = () => {
                 <div className="section mb-3">
                     <div className="section__header mb-2">
                         <h2>Top Rated Shows</h2>
-                        <Link to="/tv">
+                        <Link to="tv/">
                             <OutlineButton className="small">View more</OutlineButton>
                         </Link>
                     </div>

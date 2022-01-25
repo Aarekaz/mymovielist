@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 
 import mmlApi from "../../api/mmlApi";
 import apiConfig from "../../api/apiConfig";
+import { Autoplay } from "swiper";
 
 const CastList = (props) => {
   const { category } = useParams();
@@ -13,7 +14,7 @@ const CastList = (props) => {
   useEffect(() => {
     const getCredits = async () => {
       const res = await mmlApi.credits(category, props.id);
-      setCasts(res.cast.slice(0, 5));
+      setCasts(res.cast.slice(Autoplay));
     };
     getCredits();
   }, [category, props.id]);

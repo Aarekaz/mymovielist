@@ -94,15 +94,7 @@ const Detail = () => {
                     </div>
                   ))}
                 </div>
-                <Button
-                  onClick={() =>
-                    window.open(
-                      "https://www.2embed.ru/embed/tmdb/movie?id=" + item.id
-                    )
-                  }
-                >
-                  Stream Unofficiallly
-                </Button>
+                
                 {/* {providers?.buy?.map((item) => (
                   <div>
                     <img src={apiConfig.originalImage(item.logo_path)} alt="" />
@@ -110,6 +102,17 @@ const Detail = () => {
                   </div>
                 ))} */}
               </div>
+              <div className="smallbutton">
+                  <Button className="small"
+                    onClick={() =>
+                      window.open(
+                        "https://www.2embed.ru/embed/tmdb/movie?id=" + item.id
+                      )
+                    }
+                  >
+                  Stream Unofficiallly
+                </Button>
+                </div>
               {/* <ul> */}
               {/* {providers?.buy?.map((item) => (
                 <div>
