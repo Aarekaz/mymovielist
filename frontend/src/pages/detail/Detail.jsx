@@ -94,7 +94,7 @@ const Detail = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* {providers?.buy?.map((item) => (
                   <div>
                     <img src={apiConfig.originalImage(item.logo_path)} alt="" />
@@ -103,16 +103,32 @@ const Detail = () => {
                 ))} */}
               </div>
               <div className="smallbutton">
-                  <Button className="small"
+                {category === "movie" ? (
+                  <Button
+                    className="small"
                     onClick={() =>
                       window.open(
                         "https://www.2embed.ru/embed/tmdb/movie?id=" + item.id
                       )
                     }
                   >
-                  Stream Unofficiallly
-                </Button>
-                </div>
+                    Stream Unofficiallly
+                  </Button>
+                ) : (
+                  <Button
+                    className="small"
+                    onClick={() =>
+                      window.open(
+                        "https://www.2embed.ru/embed/tmdb/tv?id=" +
+                          item.id +
+                          "&s=1&e=1"
+                      )
+                    }
+                  >
+                    Stream S1 E1
+                  </Button>
+                )}
+              </div>
               {/* <ul> */}
               {/* {providers?.buy?.map((item) => (
                 <div>
