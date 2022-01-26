@@ -30,7 +30,7 @@ const MovieGrid = (props) => {
             });
             break;
           default:
-            response = await mmlApi.getTvList(tvType.on_air, { params });
+            response = await mmlApi.getTvList(tvType.popular, { params });
         }
       } else {
         const params = {
@@ -55,7 +55,7 @@ const MovieGrid = (props) => {
           response = await mmlApi.getMoviesList(movieType.upcoming, { params });
           break;
         default:
-          response = await mmlApi.getTvList(tvType.on_air, { params });
+          response = await mmlApi.getTvList(tvType.popular, { params });
       }
     } else {
       const params = {
