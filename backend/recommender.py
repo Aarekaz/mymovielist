@@ -72,11 +72,9 @@ def get_movie_recommendation(movie_name: str, n):
         # with open('json_data/data.json', 'w', encoding='utf-8') as f:
         #     json.dump(js, f, ensure_ascii=False, indent=4)
         print(json.dumps(final_list, indent=4))
-        st.write("The " , n , "movies recommended to you based on", movie_name, "are:")
+        st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
 
         return st.dataframe(df)
 
     else:
-        return st.error("No movies found. Please check your input")
-
-
+        return st.error("Opps! No movies found. Please check your input")

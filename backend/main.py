@@ -2,6 +2,7 @@ import time
 
 import streamlit as st
 
+from eda import *
 from recommender import get_movie_recommendation
 
 st.set_page_config(
@@ -38,9 +39,12 @@ n = form.slider("How many movies do you want to be recommended?", 0, 50)
 submit_button = form.form_submit_button(label="Give me recommendations!")
 
 
-
-
 if submit_button:
+    with st.spinner("Calculating Recommendations..."):
+        time.sleep(3)
+    st.success("Done!")
     get_movie_recommendation(name, n)
- 
 
+
+display_title_wordcloud()
+display_overview_wordcloud()
