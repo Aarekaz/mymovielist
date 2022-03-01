@@ -1,52 +1,52 @@
 [
     {
-        "Title": "Departed, The (2006)",
-        "Genre": "Crime|Drama|Thriller",
-        "Distance": 0.34705902842222613
+        "Title": "Star Wars: Episode IV - A New Hope (1977)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.23857437375106172
     },
     {
-        "Title": "Seven (a.k.a. Se7en) (1995)",
-        "Genre": "Mystery|Thriller",
-        "Distance": 0.33550617177033504
+        "Title": "Matrix, The (1999)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.23826228071525712
     },
     {
-        "Title": "Fargo (1996)",
-        "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.3310207119537921
+        "Title": "Forrest Gump (1994)",
+        "Genre": "Comedy|Drama|Romance|War",
+        "Distance": 0.23348436858980615
     },
     {
-        "Title": "Shawshank Redemption, The (1994)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.323174212764624
+        "Title": "Back to the Future (1985)",
+        "Genre": "Adventure|Comedy|Sci-Fi",
+        "Distance": 0.23196178930602585
     },
     {
-        "Title": "Usual Suspects, The (1995)",
-        "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.32168668014072466
+        "Title": "Jurassic Park (1993)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller",
+        "Distance": 0.22975788565055455
     },
     {
-        "Title": "Reservoir Dogs (1992)",
-        "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.31654211099381235
+        "Title": "Incredibles, The (2004)",
+        "Genre": "Action|Adventure|Animation|Children|Comedy",
+        "Distance": 0.2239127635470577
     },
     {
-        "Title": "Silence of the Lambs, The (1991)",
-        "Genre": "Crime|Horror|Thriller",
-        "Distance": 0.3164233524430121
+        "Title": "Finding Nemo (2003)",
+        "Genre": "Adventure|Animation|Children|Comedy",
+        "Distance": 0.22026578567080657
     },
     {
-        "Title": "Godfather: Part II, The (1974)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.31633865862707355
+        "Title": "Shrek (2001)",
+        "Genre": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+        "Distance": 0.21689005341836687
     },
     {
-        "Title": "Pulp Fiction (1994)",
-        "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.27995345605813626
+        "Title": "Monsters, Inc. (2001)",
+        "Genre": "Adventure|Animation|Children|Comedy|Fantasy",
+        "Distance": 0.20360229785670536
     },
     {
-        "Title": "Godfather, The (1972)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.27040110110738935
+        "Title": "Toy Story 2 (1999)",
+        "Genre": "Adventure|Animation|Children|Comedy|Fantasy",
+        "Distance": 0.19773246632156138
     }
 ]
