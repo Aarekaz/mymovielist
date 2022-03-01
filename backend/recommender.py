@@ -30,8 +30,8 @@ knn = NearestNeighbors(metric="cosine", algorithm="brute", n_neighbors=20, n_job
 knn.fit(csr_data)
 
 
-def get_movie_recommendation(movie_name):
-    n_movies_to_reccomend = 10
+def get_movie_recommendation(movie_name: str, n):
+    n_movies_to_reccomend = n
     movie_list = movies[movies["title"].str.contains(movie_name)]
     if len(movie_list):
         movie_idx = movie_list.iloc[0]["movieId"]
@@ -72,9 +72,11 @@ def get_movie_recommendation(movie_name):
         # with open('json_data/data.json', 'w', encoding='utf-8') as f:
         #     json.dump(js, f, ensure_ascii=False, indent=4)
         print(json.dumps(final_list, indent=4))
-        st.write("The Movies recommended to you based on", movie_name, "are:")
+        st.write("The " , n , "movies recommended to you based on", movie_name, "are:")
 
         return st.dataframe(df)
 
     else:
         return st.write("No movies found. Please check your input")
+
+

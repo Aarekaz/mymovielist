@@ -1,52 +1,157 @@
 [
     {
+        "Title": "Shrek (2001)",
+        "Genre": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+        "Distance": 0.38635107290720416
+    },
+    {
         "Title": "Star Wars: Episode IV - A New Hope (1977)",
         "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.23857437375106172
+        "Distance": 0.3835811613727482
     },
     {
-        "Title": "Matrix, The (1999)",
-        "Genre": "Action|Sci-Fi|Thriller",
-        "Distance": 0.23826228071525712
+        "Title": "Bourne Identity, The (2002)",
+        "Genre": "Action|Mystery|Thriller",
+        "Distance": 0.37751123315903756
     },
     {
-        "Title": "Forrest Gump (1994)",
-        "Genre": "Comedy|Drama|Romance|War",
-        "Distance": 0.23348436858980615
-    },
-    {
-        "Title": "Back to the Future (1985)",
-        "Genre": "Adventure|Comedy|Sci-Fi",
-        "Distance": 0.23196178930602585
+        "Title": "Inglourious Basterds (2009)",
+        "Genre": "Action|Drama|War",
+        "Distance": 0.3772282418104832
     },
     {
         "Title": "Jurassic Park (1993)",
         "Genre": "Action|Adventure|Sci-Fi|Thriller",
-        "Distance": 0.22975788565055455
+        "Distance": 0.37619126466904185
     },
     {
-        "Title": "Incredibles, The (2004)",
-        "Genre": "Action|Adventure|Animation|Children|Comedy",
-        "Distance": 0.2239127635470577
+        "Title": "X-Men (2000)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.37350945844817607
     },
     {
-        "Title": "Finding Nemo (2003)",
-        "Genre": "Adventure|Animation|Children|Comedy",
-        "Distance": 0.22026578567080657
+        "Title": "Prestige, The (2006)",
+        "Genre": "Drama|Mystery|Sci-Fi|Thriller",
+        "Distance": 0.37205893123212086
     },
     {
-        "Title": "Shrek (2001)",
-        "Genre": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
-        "Distance": 0.21689005341836687
+        "Title": "Gladiator (2000)",
+        "Genre": "Action|Adventure|Drama",
+        "Distance": 0.3719598112986894
     },
     {
-        "Title": "Monsters, Inc. (2001)",
-        "Genre": "Adventure|Animation|Children|Comedy|Fantasy",
-        "Distance": 0.20360229785670536
+        "Title": "V for Vendetta (2006)",
+        "Genre": "Action|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.3717402365447794
     },
     {
-        "Title": "Toy Story 2 (1999)",
-        "Genre": "Adventure|Animation|Children|Comedy|Fantasy",
-        "Distance": 0.19773246632156138
+        "Title": "Bourne Ultimatum, The (2007)",
+        "Genre": "Action|Crime|Thriller",
+        "Distance": 0.37035866630931
+    },
+    {
+        "Title": "Fight Club (1999)",
+        "Genre": "Action|Crime|Drama|Thriller",
+        "Distance": 0.3673921453524953
+    },
+    {
+        "Title": "300 (2007)",
+        "Genre": "Action|Fantasy|War|IMAX",
+        "Distance": 0.3632401208330973
+    },
+    {
+        "Title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+        "Genre": "Adventure|Fantasy",
+        "Distance": 0.3621902042566735
+    },
+    {
+        "Title": "Sherlock Holmes (2009)",
+        "Genre": "Action|Crime|Mystery|Thriller",
+        "Distance": 0.3621868781212362
+    },
+    {
+        "Title": "Lord of the Rings: The Return of the King, The (2003)",
+        "Genre": "Action|Adventure|Drama|Fantasy",
+        "Distance": 0.3621068958778916
+    },
+    {
+        "Title": "Spider-Man (2002)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller",
+        "Distance": 0.36205661901537434
+    },
+    {
+        "Title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+        "Genre": "Action|Adventure|Comedy|Fantasy",
+        "Distance": 0.3606578370124157
+    },
+    {
+        "Title": "District 9 (2009)",
+        "Genre": "Mystery|Sci-Fi|Thriller",
+        "Distance": 0.3596637183277307
+    },
+    {
+        "Title": "Lord of the Rings: The Two Towers, The (2002)",
+        "Genre": "Adventure|Fantasy",
+        "Distance": 0.35940858427658307
+    },
+    {
+        "Title": "Avengers, The (2012)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.3580311613736318
+    },
+    {
+        "Title": "Watchmen (2009)",
+        "Genre": "Action|Drama|Mystery|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.344481935863993
+    },
+    {
+        "Title": "Up (2009)",
+        "Genre": "Adventure|Animation|Children|Drama",
+        "Distance": 0.34306235568664634
+    },
+    {
+        "Title": "Matrix, The (1999)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.33380598194038047
+    },
+    {
+        "Title": "Casino Royale (2006)",
+        "Genre": "Action|Adventure|Thriller",
+        "Distance": 0.3211032931943897
+    },
+    {
+        "Title": "Batman Begins (2005)",
+        "Genre": "Action|Crime|IMAX",
+        "Distance": 0.31248476077509746
+    },
+    {
+        "Title": "WALL\u00b7E (2008)",
+        "Genre": "Adventure|Animation|Children|Romance|Sci-Fi",
+        "Distance": 0.3081282760040751
+    },
+    {
+        "Title": "Iron Man 2 (2010)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.3034430263445891
+    },
+    {
+        "Title": "Avatar (2009)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.3022170056469893
+    },
+    {
+        "Title": "Star Trek (2009)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.2980056631949205
+    },
+    {
+        "Title": "Inception (2010)",
+        "Genre": "Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.29532097173172933
+    },
+    {
+        "Title": "Dark Knight, The (2008)",
+        "Genre": "Action|Crime|Drama|IMAX",
+        "Distance": 0.21938469173681152
     }
 ]
