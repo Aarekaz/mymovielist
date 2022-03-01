@@ -77,6 +77,6 @@ def get_movie_recommendation(movie_name: str, n):
         return st.dataframe(df)
 
     else:
-        return st.write("No movies found. Please check your input")
+        return st.error("No movies found. Please check your input")
 
 
