@@ -8,6 +8,8 @@ import streamlit as st
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
 
+from functions import *
+
 movies = pd.read_csv("data/movies.csv", encoding="latin-1")
 ratings = pd.read_csv("data/ratings.csv", encoding="latin-1")
 
@@ -73,7 +75,7 @@ def get_movie_recommendation(movie_name: str, n):
         #     json.dump(js, f, ensure_ascii=False, indent=4)
         print(json.dumps(final_list, indent=4))
         st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
-
+        movie_bar(n)
         return st.dataframe(df)
 
     else:

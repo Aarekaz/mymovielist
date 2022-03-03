@@ -3,11 +3,12 @@ import time
 import streamlit as st
 
 from eda import *
-from recommender import get_movie_recommendation
+from item_recommender import get_movie_recommendation
+
 
 st.set_page_config(
     page_title="My Movie List",
-    page_icon="🧮",
+    page_icon="🖖",
     layout="wide",
     initial_sidebar_state="auto",
 )
@@ -46,5 +47,5 @@ if submit_button:
     get_movie_recommendation(name, n)
 
 
-display_title_wordcloud()
-display_overview_wordcloud()
+# display_title_wordcloud()
+# display_overview_wordcloud()
