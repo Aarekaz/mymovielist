@@ -1,62 +1,122 @@
 [
     {
-        "MovieID": 5418,
-        "Title": "Bourne Identity, The (2002)",
-        "Genre": "Action|Mystery|Thriller",
-        "Distance": 0.3437793417790962
+        "Movie ID": 1208,
+        "Title": "Apocalypse Now (1979)",
+        "Genre": "Action|Drama|War",
+        "Distance": 0.40360603064033607
     },
     {
-        "MovieID": 6365,
-        "Title": "Matrix Reloaded, The (2003)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
-        "Distance": 0.3393598632070155
+        "Movie ID": 1214,
+        "Title": "Alien (1979)",
+        "Genre": "Horror|Sci-Fi",
+        "Distance": 0.3992368999307373
     },
     {
-        "MovieID": 5952,
-        "Title": "Lord of the Rings: The Two Towers, The (2002)",
-        "Genre": "Adventure|Fantasy",
-        "Distance": 0.33647364285106784
+        "Movie ID": 1198,
+        "Title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+        "Genre": "Action|Adventure",
+        "Distance": 0.39382060154845455
     },
     {
-        "MovieID": 6539,
-        "Title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
-        "Genre": "Action|Adventure|Comedy|Fantasy",
-        "Distance": 0.3306268107234198
+        "Movie ID": 2762,
+        "Title": "Sixth Sense, The (1999)",
+        "Genre": "Drama|Horror|Mystery",
+        "Distance": 0.3933589028775337
     },
     {
-        "MovieID": 4993,
-        "Title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
-        "Genre": "Adventure|Fantasy",
-        "Distance": 0.3239387287227049
+        "Movie ID": 318,
+        "Title": "Shawshank Redemption, The (1994)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.38836359022437206
     },
     {
-        "MovieID": 3793,
-        "Title": "X-Men (2000)",
+        "Movie ID": 1210,
+        "Title": "Star Wars: Episode VI - Return of the Jedi (1983)",
         "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.31497699733125417
+        "Distance": 0.38587678680351223
     },
     {
-        "MovieID": 6333,
-        "Title": "X2: X-Men United (2003)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller",
-        "Distance": 0.310659053956599
+        "Movie ID": 2028,
+        "Title": "Saving Private Ryan (1998)",
+        "Genre": "Action|Drama|War",
+        "Distance": 0.37914416581022503
     },
     {
-        "MovieID": 5445,
-        "Title": "Minority Report (2002)",
-        "Genre": "Action|Crime|Mystery|Sci-Fi|Thriller",
-        "Distance": 0.29982900488339337
+        "Movie ID": 1196,
+        "Title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.36574231779087574
     },
     {
-        "MovieID": 5378,
-        "Title": "Star Wars: Episode II - Attack of the Clones (2002)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.26482630140409524
+        "Movie ID": 50,
+        "Title": "Usual Suspects, The (1995)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.3653530750586029
     },
     {
-        "MovieID": 8636,
-        "Title": "Spider-Man 2 (2004)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.2572935019656153
+        "Movie ID": 2571,
+        "Title": "Matrix, The (1999)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.362561176606653
+    },
+    {
+        "Movie ID": 608,
+        "Title": "Fargo (1996)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.3623556919051938
+    },
+    {
+        "Movie ID": 593,
+        "Title": "Silence of the Lambs, The (1991)",
+        "Genre": "Crime|Horror|Thriller",
+        "Distance": 0.3618090800437249
+    },
+    {
+        "Movie ID": 2858,
+        "Title": "American Beauty (1999)",
+        "Genre": "Drama|Romance",
+        "Distance": 0.36080382368678554
+    },
+    {
+        "Movie ID": 1089,
+        "Title": "Reservoir Dogs (1992)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.3601618816661438
+    },
+    {
+        "Movie ID": 2959,
+        "Title": "Fight Club (1999)",
+        "Genre": "Action|Crime|Drama|Thriller",
+        "Distance": 0.35830464305385956
+    },
+    {
+        "Movie ID": 1193,
+        "Title": "One Flew Over the Cuckoo's Nest (1975)",
+        "Genre": "Drama",
+        "Distance": 0.35721169802190134
+    },
+    {
+        "Movie ID": 296,
+        "Title": "Pulp Fiction (1994)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.3524091724569305
+    },
+    {
+        "Movie ID": 260,
+        "Title": "Star Wars: Episode IV - A New Hope (1977)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.3490606863631053
+    },
+    {
+        "Movie ID": 1213,
+        "Title": "Goodfellas (1990)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.2959610898225522
+    },
+    {
+        "Movie ID": 1221,
+        "Title": "Godfather: Part II, The (1974)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.15415876669735074
     }
 ]

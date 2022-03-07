@@ -39,4 +39,4 @@ def movie_bar(n):
 
     for i in range(ncol):
         col = cols[i % wcol]
-        col.image(md_parasite, use_column_width="always")
+        col.image(n, use_column_width="always")

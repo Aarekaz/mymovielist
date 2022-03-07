@@ -3,6 +3,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import requests
 import seaborn as sns
 import streamlit as st
 from scipy.sparse import csr_matrix
@@ -33,6 +34,7 @@ knn.fit(csr_data)
 
 
 def get_movie_recommendation(movie_name: str, n):
+    global df
     n_movies_to_reccomend = n
     movie_list = movies[movies["title"].str.contains(movie_name)]
     if len(movie_list):
@@ -77,6 +79,7 @@ def get_movie_recommendation(movie_name: str, n):
         print(json.dumps(final_list, indent=4))
         st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
         movie_bar(n)
+
         return st.dataframe(df)
 
     else:

@@ -5,7 +5,6 @@ import streamlit as st
 from eda import *
 from item_recommender import get_movie_recommendation
 
-
 st.set_page_config(
     page_title="My Movie List",
     page_icon="🖖",
@@ -49,3 +48,10 @@ if submit_button:
 
 # display_title_wordcloud()
 # display_overview_wordcloud()
+# display_fanchise()
+display_language()
+display_release_date()
+display_release_day()
+number_by_year()
+
+display_genre()
