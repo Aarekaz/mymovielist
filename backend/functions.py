@@ -1,5 +1,3 @@
-from tkinter import N
-
 import streamlit as st
 
 

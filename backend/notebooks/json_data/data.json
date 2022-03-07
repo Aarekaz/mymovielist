@@ -1,52 +1,62 @@
 [
     {
-        "Title": "Departed, The (2006)",
-        "Genre": "Crime|Drama|Thriller",
-        "Distance": 0.34705902842222613
+        "Movie ID": 1208,
+        "Title": "Apocalypse Now (1979)",
+        "Genre": "Action|Drama|War",
+        "Distance": 0.3940872280282831
     },
     {
-        "Title": "Seven (a.k.a. Se7en) (1995)",
-        "Genre": "Mystery|Thriller",
-        "Distance": 0.33550617177033504
+        "Movie ID": 1222,
+        "Title": "Full Metal Jacket (1987)",
+        "Genre": "Drama|War",
+        "Distance": 0.39389183571567987
     },
     {
-        "Title": "Fargo (1996)",
-        "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.3310207119537921
+        "Movie ID": 2858,
+        "Title": "American Beauty (1999)",
+        "Genre": "Drama|Romance",
+        "Distance": 0.38480197556687323
     },
     {
-        "Title": "Shawshank Redemption, The (1994)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.323174212764624
+        "Movie ID": 2959,
+        "Title": "Fight Club (1999)",
+        "Genre": "Action|Crime|Drama|Thriller",
+        "Distance": 0.3823120282414374
     },
     {
+        "Movie ID": 50,
         "Title": "Usual Suspects, The (1995)",
         "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.32168668014072466
+        "Distance": 0.35443430716695234
     },
     {
-        "Title": "Reservoir Dogs (1992)",
-        "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.31654211099381235
-    },
-    {
-        "Title": "Silence of the Lambs, The (1991)",
-        "Genre": "Crime|Horror|Thriller",
-        "Distance": 0.3164233524430121
-    },
-    {
+        "Movie ID": 1221,
         "Title": "Godfather: Part II, The (1974)",
         "Genre": "Crime|Drama",
-        "Distance": 0.31633865862707355
+        "Distance": 0.33900149393222334
     },
     {
+        "Movie ID": 608,
+        "Title": "Fargo (1996)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.33610961227228275
+    },
+    {
+        "Movie ID": 296,
         "Title": "Pulp Fiction (1994)",
         "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.27995345605813626
+        "Distance": 0.32925481474931384
     },
     {
+        "Movie ID": 858,
         "Title": "Godfather, The (1972)",
         "Genre": "Crime|Drama",
-        "Distance": 0.27040110110738935
+        "Distance": 0.2959610898225522
+    },
+    {
+        "Movie ID": 1089,
+        "Title": "Reservoir Dogs (1992)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.29491294742305074
     }
 ]

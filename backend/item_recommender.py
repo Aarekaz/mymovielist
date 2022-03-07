@@ -54,6 +54,7 @@ def get_movie_recommendation(movie_name: str, n):
             idx = movies[movies["movieId"] == movie_idx].index
             recommend_frame.append(
                 {
+                    "Movie ID": movies.iloc[idx]["movieId"].values[0],
                     "Title": movies.iloc[idx]["title"].values[0],
                     "Genre": movies.iloc[idx]["genres"].values[0],
                     "Distance": val[1],
