@@ -1,62 +1,62 @@
 [
     {
-        "MovieID": 1208,
-        "Title": "Apocalypse Now (1979)",
-        "Genre": "Action|Drama|War",
-        "Distance": 0.3940872280282831
+        "MovieID": 5418,
+        "Title": "Bourne Identity, The (2002)",
+        "Genre": "Action|Mystery|Thriller",
+        "Distance": 0.3437793417790962
     },
     {
-        "MovieID": 1222,
-        "Title": "Full Metal Jacket (1987)",
-        "Genre": "Drama|War",
-        "Distance": 0.39389183571567987
+        "MovieID": 6365,
+        "Title": "Matrix Reloaded, The (2003)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.3393598632070155
     },
     {
-        "MovieID": 2858,
-        "Title": "American Beauty (1999)",
-        "Genre": "Drama|Romance",
-        "Distance": 0.38480197556687323
+        "MovieID": 5952,
+        "Title": "Lord of the Rings: The Two Towers, The (2002)",
+        "Genre": "Adventure|Fantasy",
+        "Distance": 0.33647364285106784
     },
     {
-        "MovieID": 2959,
-        "Title": "Fight Club (1999)",
-        "Genre": "Action|Crime|Drama|Thriller",
-        "Distance": 0.3823120282414374
+        "MovieID": 6539,
+        "Title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+        "Genre": "Action|Adventure|Comedy|Fantasy",
+        "Distance": 0.3306268107234198
     },
     {
-        "MovieID": 50,
-        "Title": "Usual Suspects, The (1995)",
-        "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.35443430716695234
+        "MovieID": 4993,
+        "Title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+        "Genre": "Adventure|Fantasy",
+        "Distance": 0.3239387287227049
     },
     {
-        "MovieID": 1221,
-        "Title": "Godfather: Part II, The (1974)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.33900149393222334
+        "MovieID": 3793,
+        "Title": "X-Men (2000)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.31497699733125417
     },
     {
-        "MovieID": 608,
-        "Title": "Fargo (1996)",
-        "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.33610961227228275
+        "MovieID": 6333,
+        "Title": "X2: X-Men United (2003)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller",
+        "Distance": 0.310659053956599
     },
     {
-        "MovieID": 296,
-        "Title": "Pulp Fiction (1994)",
-        "Genre": "Comedy|Crime|Drama|Thriller",
-        "Distance": 0.32925481474931384
+        "MovieID": 5445,
+        "Title": "Minority Report (2002)",
+        "Genre": "Action|Crime|Mystery|Sci-Fi|Thriller",
+        "Distance": 0.29982900488339337
     },
     {
-        "MovieID": 858,
-        "Title": "Godfather, The (1972)",
-        "Genre": "Crime|Drama",
-        "Distance": 0.2959610898225522
+        "MovieID": 5378,
+        "Title": "Star Wars: Episode II - Attack of the Clones (2002)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.26482630140409524
     },
     {
-        "MovieID": 1089,
-        "Title": "Reservoir Dogs (1992)",
-        "Genre": "Crime|Mystery|Thriller",
-        "Distance": 0.29491294742305074
+        "MovieID": 8636,
+        "Title": "Spider-Man 2 (2004)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.2572935019656153
     }
 ]
