@@ -9,7 +9,7 @@ import streamlit as st
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
 
-from functions import *
+# from functions import *
 
 movies = pd.read_csv("data/movies.csv", encoding="latin-1")
 ratings = pd.read_csv("data/ratings.csv", encoding="latin-1")
@@ -100,9 +100,9 @@ def get_movie_recommendation(movie_name: str, n):
         print(json.dumps(final_list, indent=4))
         st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
         
-        movie_bar(n)
+        return movie_bar(n)
 
-        return st.dataframe(df_f)
+        # return st.dataframe(df_f)
 
         # # (index|columns|records|split|table)
         # js = df.to_json(orient="index")
@@ -123,3 +123,14 @@ def get_movie_recommendation(movie_name: str, n):
 
     else:
         return st.error("Opps! No movies found. Please check your input")
+
+def movie_bar(n):
+
+    ncol = n
+    wcol = 4
+
+    cols = st.columns(ncol)
+
+    for i in range(ncol):
+        col = cols[i % wcol]
+        col.image(df_f['Poster'][i], use_column_width="always")
