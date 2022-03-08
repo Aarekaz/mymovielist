@@ -67,7 +67,7 @@ Rating_avg = Rating_avg.astype({"movieId": str})
 Movie_user = Rating_avg.groupby(by="userId")["movieId"].apply(lambda x: ",".join(x))
 
 
-def user_reccomender(user, n):
+def user_recomender(user, n):
     Movie_seen_by_user = check.columns[
         check[check.index == user].notna().any()
     ].tolist()

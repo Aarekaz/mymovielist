@@ -5,7 +5,7 @@ import streamlit as st
 
 from eda import *
 from item_recommender import get_movie_recommendation
-from user_recommender import get_user_recommendation
+from user_recommender import user_recomender
 
 
 def home():
@@ -49,7 +49,7 @@ def home():
             with st.spinner("Generating Recommendations..."):
                 time.sleep(3)
             st.success("Done!")
-            get_user_recommendation(user, n)
+            user_recomender(user, n)
 
     elif selection == "Hybrid":
         st.write("Hybrid")
