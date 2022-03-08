@@ -1,62 +1,20 @@
 [
     {
-        "MovieID": 5418,
-        "Title": "Bourne Identity, The (2002)",
-        "Genre": "Action|Mystery|Thriller",
-        "Distance": 0.3437793417790962
+        "Movie ID": 4980,
+        "Title": "Bill & Ted's Bogus Journey (1991)",
+        "Genre": "Adventure|Comedy|Fantasy|Sci-Fi",
+        "Distance": 0.5762138319393568,
+        "imdbId": 101452,
+        "tmdbId": 1649.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//tldtDfLnPFOtTWp758EmIP2Hbz5.jpg"
     },
     {
-        "MovieID": 6365,
-        "Title": "Matrix Reloaded, The (2003)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
-        "Distance": 0.3393598632070155
-    },
-    {
-        "MovieID": 5952,
-        "Title": "Lord of the Rings: The Two Towers, The (2002)",
-        "Genre": "Adventure|Fantasy",
-        "Distance": 0.33647364285106784
-    },
-    {
-        "MovieID": 6539,
-        "Title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
-        "Genre": "Action|Adventure|Comedy|Fantasy",
-        "Distance": 0.3306268107234198
-    },
-    {
-        "MovieID": 4993,
-        "Title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
-        "Genre": "Adventure|Fantasy",
-        "Distance": 0.3239387287227049
-    },
-    {
-        "MovieID": 3793,
-        "Title": "X-Men (2000)",
-        "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.31497699733125417
-    },
-    {
-        "MovieID": 6333,
-        "Title": "X2: X-Men United (2003)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller",
-        "Distance": 0.310659053956599
-    },
-    {
-        "MovieID": 5445,
-        "Title": "Minority Report (2002)",
-        "Genre": "Action|Crime|Mystery|Sci-Fi|Thriller",
-        "Distance": 0.29982900488339337
-    },
-    {
-        "MovieID": 5378,
-        "Title": "Star Wars: Episode II - Attack of the Clones (2002)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.26482630140409524
-    },
-    {
-        "MovieID": 8636,
-        "Title": "Spider-Man 2 (2004)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.2572935019656153
+        "Movie ID": 1023,
+        "Title": "Winnie the Pooh and the Blustery Day (1968)",
+        "Genre": "Animation|Children|Musical",
+        "Distance": 0.5719780918672303,
+        "imdbId": 63819,
+        "tmdbId": 81310.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//5kNFx8GW0zgtLDkhfNBOMMVmJTX.jpg"
     }
 ]
