@@ -8,14 +8,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly
+import plotly.express as px
 import seaborn as sns
 import streamlit as st
 from chart_studio.tools import set_config_file
 from IPython.display import HTML, Image
 from scipy import stats
 from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.ensemble import (GradientBoostingClassifier,
-                              GradientBoostingRegressor)
+from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from wordcloud import STOPWORDS, WordCloud
 from xgboost import XGBClassifier, XGBRegressor
@@ -289,9 +289,49 @@ def display_genre():
     st.markdown("### Plot by ROI")
     fig2 = plt.figure(figsize=(18, 8))
 
-    fig2, ax = plt.subplots(nrows=1, ncols=1,figsize=(15, 8))
-    sns.boxplot(x='genre', y='return', data=violin_movies, palette="muted", ax =ax)
+    fig2, ax = plt.subplots(nrows=1, ncols=1, figsize=(15, 8))
+    sns.boxplot(x="genre", y="return", data=violin_movies, palette="muted", ax=ax)
     ax.set_ylim([0, 10])
     st.pyplot(fig2)
-    st.markdown("From the boxplot, it seems like **Animation** Movies tend to yield the highest returns on average. **Horror** Movies also tend to be a good bet. This is partially due to the nature of Horror movies being low budget compared to Fantasy Movies but being capable of generating very high revenues relative to its budget.")
+    st.markdown(
+        "From the boxplot, it seems like **Animation** Movies tend to yield the highest returns on average. **Horror** Movies also tend to be a good bet. This is partially due to the nature of Horror movies being low budget compared to Fantasy Movies but being capable of generating very high revenues relative to its budget."
+    )
 
+
+def first_elem_csv(csv):
+    if str(csv) == "nan":
+        return np.nan
+    else:
+        return csv.split(",")[0]
+
+
+def map_countries():
+    movies = pd.read_csv("EDA_data/movies.csv", sep=";")
+    # Selección del primer país de la lista de países y creación de tabla counts de países
+    movies["primaryCountry"] = movies["countries"].apply(first_elem_csv)
+    countries_count = movies.groupby("primaryCountry")[["primaryCountry"]].count()
+    countries_count.rename(columns={"primaryCountry": "countryCounts"}, inplace=True)
+    countries_count.reset_index(inplace=True)
+
+    fig = px.scatter_geo(
+        countries_count,
+        locations="primaryCountry",
+        hover_name="primaryCountry",
+        size="countryCounts",
+        text="countryCounts",
+        projection="equirectangular",
+        locationmode="country names",
+        template="plotly_dark",  # width=1200, height=600,
+    )
+    fig.update_layout(
+        margin={"r": 0, "t": 0, "l": 0, "b": 0},
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
+    )
+
+    fig.update_traces(
+        marker=dict(color="#f5c518", line_width=0, sizeref=0.1, sizemin=5),
+        mode="markers+text",
+        textfont=dict(size=10),
+    )
+    return fig

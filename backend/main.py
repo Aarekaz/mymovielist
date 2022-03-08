@@ -40,7 +40,7 @@ submit_button = form.form_submit_button(label="Give me recommendations!")
 
 
 if submit_button:
-    
+
     with st.spinner("Calculating Recommendations..."):
         time.sleep(3)
     st.success("Done!")
@@ -56,3 +56,5 @@ display_release_day()
 number_by_year()
 
 display_genre()
+
+st.write(map_countries())
