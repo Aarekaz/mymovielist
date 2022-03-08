@@ -40,6 +40,7 @@ api_base_url = f"https://api.themoviedb.org/{api_version}"
 
 
 def get_movie_recommendation(movie_name: str, n):
+    poster.clear()
     global df_f
     n_movies_to_reccomend = n
     movie_list = movies[movies["title"].str.contains(movie_name)]
@@ -102,29 +103,13 @@ def get_movie_recommendation(movie_name: str, n):
         
         return movie_bar(n)
 
-        # return st.dataframe(df_f)
-
-        # # (index|columns|records|split|table)
-        # js = df.to_json(orient="index")
-
-        # final_list = list()
-        # for row in df.iterrows():
-        #     final_list.append(row[1].to_dict())
-
-        # with open("notebooks\json_data\data.json", "w") as f:
-        #     f.write(json.dumps(final_list, indent=4))
-
-        # # with open('json_data/data.json', 'w', encoding='utf-8') as f:
-        # #     json.dump(js, f, ensure_ascii=False, indent=4)
-        # print(json.dumps(final_list, indent=4))
-        # st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
-        # movie_bar(n)
-        # return st.dataframe(df)
-
     else:
         return st.error("Opps! No movies found. Please check your input")
 
+
+
 def movie_bar(n):
+    front_end = f"http://localhost:3000/movie/"
 
     ncol = n
     wcol = 4
@@ -133,4 +118,10 @@ def movie_bar(n):
 
     for i in range(ncol):
         col = cols[i % wcol]
-        col.image(df_f['Poster'][i], use_column_width="always")
+        poster_link = f"{df_f['Poster'][i]}"
+        tmdb_id = f"{df_f['tmdbId'][i]}"
+        with col:
+            st.markdown(f"[![Foo]({poster_link})]({front_end}+{tmdb_id})")
+            
+
+        

@@ -40,11 +40,12 @@ submit_button = form.form_submit_button(label="Give me recommendations!")
 
 
 if submit_button:
+    
     with st.spinner("Calculating Recommendations..."):
         time.sleep(3)
     st.success("Done!")
+    new_n = n
     get_movie_recommendation(name, n)
-
 
 # display_title_wordcloud()
 # display_overview_wordcloud()
