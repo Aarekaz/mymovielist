@@ -118,10 +118,33 @@ def movie_bar(n):
 
     for i in range(ncol):
         col = cols[i % wcol]
+        # col.image(df_f['tmdbId'][i],use_column_width = "always")
+
+        # {front_end}{tmdb_id}
+
         poster_link = f"{df_f['Poster'][i]}"
         tmdb_id = f"{df_f['tmdbId'][i]}"
+
         with col:
-            st.markdown(f"[![Foo]({poster_link})]({front_end}+{tmdb_id})")
+            # st.markdown(f"[![Foo]({poster_link})]({front_end}+{tmdb_id})")
+            st.markdown(f'''
+                    <style>
+                        img{"""{
+                            width: 100%;
+                            height: auto;
+                            max-width: 50vw;
+                            }
+                            """
+                        }
+                    </style>
+                    <a href="{front_end}{tmdb_id}">
+                        <img src="{poster_link}"/>
+                    </a>
+                ''',
+                unsafe_allow_html=True
+            )
+
+    
             
 
         

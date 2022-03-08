@@ -1,146 +1,119 @@
 [
     {
-        "Movie ID": 53125,
-        "Title": "Pirates of the Caribbean: At World's End (2007)",
+        "Movie ID": 1097,
+        "Title": "E.T. the Extra-Terrestrial (1982)",
+        "Genre": "Children|Drama|Sci-Fi",
+        "Distance": 0.48165033914172106,
+        "imdbId": 83866,
+        "tmdbId": 601.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//an0nD6uq6byfxXCfk6lQBzdL2J1.jpg"
+    },
+    {
+        "Movie ID": 2571,
+        "Title": "Matrix, The (1999)",
+        "Genre": "Action|Sci-Fi|Thriller",
+        "Distance": 0.47365344514821694,
+        "imdbId": 133093,
+        "tmdbId": 603.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
+    },
+    {
+        "Movie ID": 6539,
+        "Title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
         "Genre": "Action|Adventure|Comedy|Fantasy",
-        "Distance": 0.392742634552224,
-        "imdbId": 449088,
-        "tmdbId": 285.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//2YMnBRh8F6fDGCCEIPk9Hb0cEyB.jpg"
+        "Distance": 0.4639368023233166,
+        "imdbId": 325980,
+        "tmdbId": 22.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg"
     },
     {
-        "Movie ID": 87232,
-        "Title": "X-Men: First Class (2011)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller|War",
-        "Distance": 0.3882491830217565,
-        "imdbId": 1270798,
-        "tmdbId": 49538.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//vUvlOY575rztBuJV3a0dbHW5MQR.jpg"
+        "Movie ID": 1704,
+        "Title": "Good Will Hunting (1997)",
+        "Genre": "Drama|Romance",
+        "Distance": 0.46075947647817417,
+        "imdbId": 119217,
+        "tmdbId": 489.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//bABCBKYBK7A5G1x0FzoeoNfuj2.jpg"
     },
     {
-        "Movie ID": 73017,
-        "Title": "Sherlock Holmes (2009)",
-        "Genre": "Action|Crime|Mystery|Thriller",
-        "Distance": 0.3810406734468895,
-        "imdbId": 988045,
-        "tmdbId": 10528.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//momkKuWburNTqKBF6ez7rvhYVhE.jpg"
+        "Movie ID": 1682,
+        "Title": "Truman Show, The (1998)",
+        "Genre": "Comedy|Drama|Sci-Fi",
+        "Distance": 0.4606275547940383,
+        "imdbId": 120382,
+        "tmdbId": 37165.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//2rs16qtfuOuExq1vBtfmTUtRYFj.jpg"
     },
     {
-        "Movie ID": 70286,
-        "Title": "District 9 (2009)",
-        "Genre": "Mystery|Sci-Fi|Thriller",
-        "Distance": 0.3779036857408613,
-        "imdbId": 1136608,
-        "tmdbId": 17654.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//tuGlQkqLxnodDSk6mp5c2wvxUEd.jpg"
+        "Movie ID": 5989,
+        "Title": "Catch Me If You Can (2002)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.46028052375951656,
+        "imdbId": 264464,
+        "tmdbId": 640.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//vG3YcgXuZABv7C8nd5bEyuMfyTQ.jpg"
     },
     {
-        "Movie ID": 59784,
-        "Title": "Kung Fu Panda (2008)",
-        "Genre": "Action|Animation|Children|Comedy|IMAX",
-        "Distance": 0.37368705553008175,
-        "imdbId": 441773,
-        "tmdbId": 9502.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg"
+        "Movie ID": 2762,
+        "Title": "Sixth Sense, The (1999)",
+        "Genre": "Drama|Horror|Mystery",
+        "Distance": 0.4528776424144494,
+        "imdbId": 167404,
+        "tmdbId": 745.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//fIssD3w3SvIhPPmVo4WMgZDVLID.jpg"
     },
     {
-        "Movie ID": 79132,
-        "Title": "Inception (2010)",
-        "Genre": "Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX",
-        "Distance": 0.3691745753281792,
-        "imdbId": 1375666,
-        "tmdbId": 27205.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//edv5CZvWj09upOsy2Y6IwDhK8bt.jpg"
+        "Movie ID": 2028,
+        "Title": "Saving Private Ryan (1998)",
+        "Genre": "Action|Drama|War",
+        "Distance": 0.4371958197583069,
+        "imdbId": 120815,
+        "tmdbId": 857.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//1wY4psJ5NVEhCuOYROwLH2XExM2.jpg"
     },
     {
-        "Movie ID": 68954,
-        "Title": "Up (2009)",
-        "Genre": "Adventure|Animation|Children|Drama",
-        "Distance": 0.3688569117501048,
-        "imdbId": 1049413,
-        "tmdbId": 14160.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//eAdO0qa9m0NFSVLZ26PvCwmPlsr.jpg"
+        "Movie ID": 4306,
+        "Title": "Shrek (2001)",
+        "Genre": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+        "Distance": 0.4331195927206404,
+        "imdbId": 126029,
+        "tmdbId": 808.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//iB64vpL3dIObOtMZgX3RqdVdQDc.jpg"
     },
     {
-        "Movie ID": 112852,
-        "Title": "Guardians of the Galaxy (2014)",
+        "Movie ID": 6377,
+        "Title": "Finding Nemo (2003)",
+        "Genre": "Adventure|Animation|Children|Comedy",
+        "Distance": 0.43240000769969733,
+        "imdbId": 266543,
+        "tmdbId": 12.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg"
+    },
+    {
+        "Movie ID": 2628,
+        "Title": "Star Wars: Episode I - The Phantom Menace (1999)",
         "Genre": "Action|Adventure|Sci-Fi",
-        "Distance": 0.3687577424126396,
-        "imdbId": 2015381,
-        "tmdbId": 118340.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"
+        "Distance": 0.42762313506418104,
+        "imdbId": 120915,
+        "tmdbId": 1893.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//6wkfovpn7Eq8dYNKaG5PY3q2oq6.jpg"
     },
     {
-        "Movie ID": 60684,
-        "Title": "Watchmen (2009)",
-        "Genre": "Action|Drama|Mystery|Sci-Fi|Thriller|IMAX",
-        "Distance": 0.3685583176966156,
-        "imdbId": 409459,
-        "tmdbId": 13183.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//aZvOkdo203bm1kpcY0A0Tn074ER.jpg"
+        "Movie ID": 356,
+        "Title": "Forrest Gump (1994)",
+        "Genre": "Comedy|Drama|Romance|War",
+        "Distance": 0.4271866978202865,
+        "imdbId": 109830,
+        "tmdbId": 13.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//saHP97rTPS5eLmrLQEcANmKrsFl.jpg"
     },
     {
-        "Movie ID": 68358,
-        "Title": "Star Trek (2009)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.36602940514331395,
-        "imdbId": 796366,
-        "tmdbId": 13475.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//9vaRPXj44Q2meHgt3VVfQufiHOJ.jpg"
-    },
-    {
-        "Movie ID": 33794,
-        "Title": "Batman Begins (2005)",
-        "Genre": "Action|Crime|IMAX",
-        "Distance": 0.3627589745372938,
-        "imdbId": 372784,
-        "tmdbId": 272.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//8RW2runSEc34IwKN2D1aPcJd2UL.jpg"
-    },
-    {
-        "Movie ID": 72998,
-        "Title": "Avatar (2009)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.31089326180490995,
-        "imdbId": 499549,
-        "tmdbId": 19995.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg"
-    },
-    {
-        "Movie ID": 77561,
-        "Title": "Iron Man 2 (2010)",
-        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
-        "Distance": 0.30749155823084806,
-        "imdbId": 1228705,
-        "tmdbId": 10138.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg"
-    },
-    {
-        "Movie ID": 60069,
-        "Title": "WALL\u00c2\u00b7E (2008)",
-        "Genre": "Adventure|Animation|Children|Romance|Sci-Fi",
-        "Distance": 0.2981377590200208,
-        "imdbId": 910970,
-        "tmdbId": 10681.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//Agc6lw8pb6BIGVeguvdjDT0p9Mb.jpg"
-    },
-    {
-        "Movie ID": 58559,
-        "Title": "Dark Knight, The (2008)",
-        "Genre": "Action|Crime|Drama|IMAX",
-        "Distance": 0.28583480118216587,
-        "imdbId": 468569,
-        "tmdbId": 155.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//qJ2tW6WMUDux911r6m7haRef0WH.jpg"
-    },
-    {
-        "Movie ID": 89745,
-        "Title": "Avengers, The (2012)",
-        "Genre": "Action|Adventure|Sci-Fi|IMAX",
-        "Distance": 0.2853194248771902,
-        "imdbId": 848228,
-        "tmdbId": 24428.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//RYMX2wcKCBAr24UyPD7xwmjaTn.jpg"
+        "Movie ID": 1580,
+        "Title": "Men in Black (a.k.a. MIB) (1997)",
+        "Genre": "Action|Comedy|Sci-Fi",
+        "Distance": 0.42025439218622584,
+        "imdbId": 119654,
+        "tmdbId": 607.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//uLOmOF5IzWoyrgIF5MfUnh5pa1X.jpg"
     }
 ]
