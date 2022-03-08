@@ -10,23 +10,34 @@ def home():
     st.header("Welcome to My Movie List")
     st.markdown("![](https://media.giphy.com/media/3ohhwDMC187JqL69DG/giphy.gif)")
 
-    form = st.form(key="my_form", clear_on_submit=False)
-
-    name = form.text_input(
-        "Enter the name of the movie that you wish to be recommended upon:"
+    selection = st.selectbox(
+        "Which type of reccomendation do you want?",
+        ["Item Based", "User Based", "Hybrid"],
     )
+    if selection == "Item Based":
+        form = st.form(key="my_form", clear_on_submit=False)
 
-    n = form.slider("How many movies do you want to be recommended?", 0, 50)
+        name = form.text_input(
+            "Enter the name of the movie that you wish to be recommended upon:"
+        )
 
-    submit_button = form.form_submit_button(label="Give me recommendations!")
+        n = form.slider("How many movies do you want to be recommended?", 0, 50)
 
-    if submit_button:
+        submit_button = form.form_submit_button(label="Give me recommendations!")
 
-        with st.spinner("Calculating Recommendations..."):
-            time.sleep(3)
-        st.success("Done!")
-        new_n = n
-        get_movie_recommendation(name, n)
+        if submit_button:
+
+            with st.spinner("Calculating Recommendations..."):
+                time.sleep(3)
+            st.success("Done!")
+            new_n = n
+            get_movie_recommendation(name, n)
+
+    elif selection == "User Based":
+        st.text("User Based")
+
+    elif selection == "Hybrid":
+        st.write("Hybrid")
 
 
 def show_data():
