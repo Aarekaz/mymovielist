@@ -1,46 +1,70 @@
-import imp
+import time
 
 import streamlit as st
 
-posters = []
+from eda import *
+from item_recommender import get_movie_recommendation
 
 
-def movie_bar(n):
+def home():
+    st.header("Welcome to My Movie List")
+    st.markdown("![](https://media.giphy.com/media/3ohhwDMC187JqL69DG/giphy.gif)")
 
-    md_parasite = "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UY720_.jpg"
-    md_boyhood = "https://m.media-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_FMjpg_UX1000_.jpg"
-    md_endgame = "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UY720_.jpg"
-    md_interstellar = "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UY720_.jpg"
-    md_showman = "https://m.media-amazon.com/images/M/MV5BYjQ0ZWJkYjMtYjJmYS00MjJiLTg3NTYtMmIzN2E2Y2YwZmUyXkEyXkFqcGdeQXVyNjk5NDA3OTk@._V1_FMjpg_UY720_.jpg"
-    md_split = "https://m.media-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_FMjpg_UY720_.jpg"
-    md_sw_despertar = "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_FMjpg_UY720_.jpg"
-    md_lalaland = "https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_FMjpg_UY720_.jpg"
+    form = st.form(key="my_form", clear_on_submit=False)
 
-    col1, col2, col3, col4, col5, col6, col7, col8 = st.beta_columns(8)
+    name = form.text_input(
+        "Enter the name of the movie that you wish to be recommended upon:"
+    )
 
-    with col1:
-        st.image(md_parasite, use_column_width="always")
-    with col2:
-        st.image(md_endgame, use_column_width="always")
-    with col3:
-        st.image(md_showman, use_column_width="always")
-    with col4:
-        st.image(md_interstellar, use_column_width="always")
-    with col5:
-        st.image(md_boyhood, use_column_width="always")
-    with col6:
-        st.image(md_split, use_column_width="always")
-    with col7:
-        st.image(md_sw_despertar, use_column_width="always")
-    with col8:
-        st.image(md_lalaland, use_column_width="always")
+    n = form.slider("How many movies do you want to be recommended?", 0, 50)
 
-    ncol = n
-    wcol = 4
+    submit_button = form.form_submit_button(label="Give me recommendations!")
 
-    cols = st.columns(ncol)
+    if submit_button:
 
-    # for i in range(ncol):
-    #     posters[i] = df['Poster']
-    #     col = cols[i % wcol]
-    #     col.image(df['Poster'][i], use_column_width="always")
+        with st.spinner("Calculating Recommendations..."):
+            time.sleep(3)
+        st.success("Done!")
+        new_n = n
+        get_movie_recommendation(name, n)
+
+
+def show_data():
+    st.markdown(
+        "The dataset below was obtained through the TMDB API. The movies available in this dataset are in correspondence with the movies that are listed in the **MovieLens Latest Full Dataset** comprising of 26 million ratings on 45,000 movies from 27,000 users."
+    )
+    #     st.write("The features of the dataset are  ")
+    #     st.markdown(
+    #         """ ### Features
+
+    # * **adult:** Indicates if the movie is X-Rated or Adult.
+    # * **belongs_to_collection:** A stringified dictionary that gives information on the movie series the particular film belongs to.
+    # * **budget:** The budget of the movie in dollars.
+    # * **genres:** A stringified list of dictionaries that list out all the genres associated with the movie.
+    # * **homepage:** The Official Homepage of the move.
+    # * **id:** The ID of the move.
+    # * **imdb_id:** The IMDB ID of the movie.
+    # * **original_language:** The language in which the movie was originally shot in.
+    # * **original_title:** The original title of the movie.
+    # * **overview:** A brief blurb of the movie.
+    # * **popularity:** The Popularity Score assigned by TMDB.
+    # * **poster_path:** The URL of the poster image.
+    # * **production_companies:** A stringified list of production companies involved with the making of the movie.
+    # * **production_countries:** A stringified list of countries where the movie was shot/produced in.
+    # * **release_date:** Theatrical Release Date of the movie.
+    # * **revenue:** The total revenue of the movie in dollars.
+    # * **runtime:** The runtime of the movie in minutes.
+    # * **spoken_languages:** A stringified list of spoken languages in the film.
+    # * **status:** The status of the movie (Released, To Be Released, Announced, etc.)
+    # * **tagline:** The tagline of the movie.
+    # * **title:** The Official Title of the movie.
+    # * **video:** Indicates if there is a video present of the movie with TMDB.
+    # * **vote_average:** The average rating of the movie.
+    # * **vote_count:** The number of votes by users, as counted by TMDB. """
+    # )
+
+    # movies = pd.read_csv("EDA_data/movies_metadata.csv", sep=";")
+    # st.write(movies.head())
+
+    ratings = pd.read_csv("EDA_data/movies_metadata.csv", sep=";")
+    st.write(ratings.head())

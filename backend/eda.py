@@ -15,7 +15,8 @@ from chart_studio.tools import set_config_file
 from IPython.display import HTML, Image
 from scipy import stats
 from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
+from sklearn.ensemble import (GradientBoostingClassifier,
+                              GradientBoostingRegressor)
 from sklearn.model_selection import train_test_split
 from wordcloud import STOPWORDS, WordCloud
 from xgboost import XGBClassifier, XGBRegressor
@@ -307,7 +308,7 @@ def first_elem_csv(csv):
 
 def map_countries():
     movies = pd.read_csv("EDA_data/movies.csv", sep=";")
-    # Selección del primer país de la lista de países y creación de tabla counts de países
+    
     movies["primaryCountry"] = movies["countries"].apply(first_elem_csv)
     countries_count = movies.groupby("primaryCountry")[["primaryCountry"]].count()
     countries_count.rename(columns={"primaryCountry": "countryCounts"}, inplace=True)

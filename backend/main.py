@@ -2,8 +2,7 @@ import time
 
 import streamlit as st
 
-from eda import *
-from item_recommender import get_movie_recommendation
+from functions import *
 
 st.set_page_config(
     page_title="My Movie List",
@@ -16,8 +15,6 @@ st.sidebar.title("My Movie List")
 st.sidebar.write(
     "My Movie List is a movie recommendation system based on item based collaborative filtering algorithm"
 )
-st.sidebar.markdown("![](https://media.giphy.com/media/3ohhwDMC187JqL69DG/giphy.gif)")
-st.header("Welcome to My Movie List")
 
 
 hide_streamlit_style = """
@@ -28,33 +25,33 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-form = st.form(key="my_form", clear_on_submit=False)
-
-name = form.text_input(
-    "Enter the name of the movie that you wish to be recommended upon:"
+menu = st.sidebar.radio(
+    "",
+    ("Intro", "Visuwalizations", "View DataSets"),
 )
 
-n = form.slider("How many movies do you want to be recommended?", 0, 50)
+st.sidebar.markdown("---")
+st.sidebar.write(
+    "Anurag Dhungana | Apurba Shrestha | Prakriti Bista | Siddhartha Shrestha | 2022"
+)
 
-submit_button = form.form_submit_button(label="Give me recommendations!")
+if menu == "Intro":
+    home()
 
+elif menu == "Visuwalizations":
+    st.write("Show Visulaizations")
 
-if submit_button:
-
-    with st.spinner("Calculating Recommendations..."):
-        time.sleep(3)
-    st.success("Done!")
-    new_n = n
-    get_movie_recommendation(name, n)
+elif menu == "View DataSets":
+    st.write("In progress")
 
 # display_title_wordcloud()
 # display_overview_wordcloud()
 # display_fanchise()
-display_language()
-display_release_date()
-display_release_day()
-number_by_year()
+# display_language()
+# display_release_date()
+# display_release_day()
+# number_by_year()
 
-display_genre()
+# display_genre()
 
-st.write(map_countries())
+# st.write(map_countries())
