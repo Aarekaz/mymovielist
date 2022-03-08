@@ -2,6 +2,7 @@ import imp
 import time
 
 import streamlit as st
+from pyparsing import col
 
 from eda import *
 from item_recommender import get_movie_recommendation
@@ -53,6 +54,65 @@ def home():
 
     elif selection == "Hybrid":
         st.write("Hybrid")
+
+
+def show_viz():
+    st.title("Visualizations Based on the Dataset")
+    options = st.radio(
+        "",
+        ("Based on Title", "Franchise", "Language", "Release Time", "Genre", "Country"),
+    )
+    if options == "Based on Title":
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown(" #### Title ")
+            st.write(display_title_wordcloud())
+        with col2:
+            st.markdown(" #### Overview ")
+            st.write(display_overview_wordcloud())
+
+    elif options == "Franchise":
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown(
+                "The **Harry Potter** Franchise is the most successful movie franchise raking in more than 7.707 billion dollars from 8 movies. The **Star Wars** Movies come in a close second with a 7.403 billion dollars from 8 movies too. **James Bond** is third but the franchise has significantly more movies compared to the others in the list and therefore, a much smaller average gross."
+            )
+        with col2:
+            st.write(display_fanchise())
+
+    elif options == "Language":
+        st.write("Distribution of various languages of movie in the dataset")
+        st.write(display_language())
+
+    elif options == "Release Time":
+        st.write("Distribution of release time of movie in the dataset")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.write(display_release_date())
+        with col2:
+            st.write(display_release_day())
+        col3, col4 = st.columns(2)
+        with col3:
+            st.write(gross_month())
+        with col4:
+            st.write(number_by_year())
+
+    elif options == "Genre":
+        st.write("Distribution of various genres of movie in the dataset")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.write(display_genre())
+        with col2:
+            st.write(genre_revenue())
+
+        st.write(genre_roi())
+
+    elif options == "Country":
+        st.write("Distribution of various countries of movie in the dataset")
+        st.write(map_countries())
 
 
 def show_data():

@@ -10,7 +10,10 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
 )
-
+st.write(
+    "<style>div.row-widget.stRadio > div{flex-direction:row;}</style>",
+    unsafe_allow_html=True,
+)
 st.sidebar.title("My Movie List")
 st.sidebar.write(
     "My Movie List is a movie recommendation system based on item based collaborative filtering algorithm"
@@ -27,7 +30,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 menu = st.sidebar.radio(
     "",
-    ("Intro", "Visuwalizations", "View DataSets"),
+    ("Intro", "Visualizations", "View DataSets"),
 )
 
 st.sidebar.markdown("---")
@@ -38,8 +41,8 @@ st.sidebar.write(
 if menu == "Intro":
     home()
 
-elif menu == "Visuwalizations":
-    st.write("Show Visulaizations")
+elif menu == "Visualizations":
+    show_viz()
 
 elif menu == "View DataSets":
     st.write("In progress")

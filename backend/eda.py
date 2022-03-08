@@ -15,8 +15,7 @@ from chart_studio.tools import set_config_file
 from IPython.display import HTML, Image
 from scipy import stats
 from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.ensemble import (GradientBoostingClassifier,
-                              GradientBoostingRegressor)
+from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from wordcloud import STOPWORDS, WordCloud
 from xgboost import XGBClassifier, XGBRegressor
@@ -70,7 +69,7 @@ overview_corpus = " ".join(df["overview"])
 
 def display_title_wordcloud():
     title_wordcloud = WordCloud(
-        stopwords=STOPWORDS, background_color="white", height=2000, width=4000
+        stopwords=STOPWORDS, background_color="black", height=2000, width=4000
     ).generate(title_corpus)
     # plt.figure(figsize=(16, 8))
     # plt.imshow(title_wordcloud)
@@ -84,7 +83,7 @@ def display_title_wordcloud():
 
 def display_overview_wordcloud():
     overview_wordcloud = WordCloud(
-        stopwords=STOPWORDS, background_color="white", height=2000, width=4000
+        stopwords=STOPWORDS, background_color="black", height=2000, width=4000
     ).generate(overview_corpus)
     # plt.figure(figsize=(16,8))
     # plt.imshow(overview_wordcloud)
@@ -137,9 +136,6 @@ def display_fanchise():
     ).reset_index()
 
     st.dataframe(fran_pivot.sort_values("sum", ascending=False).head(10))
-    st.markdown(
-        "The **Harry Potter** Franchise is the most successful movie franchise raking in more than 7.707 billion dollars from 8 movies. The **Star Wars** Movies come in a close second with a 7.403 billion dollars from 8 movies too. **James Bond** is third but the franchise has significantly more movies compared to the others in the list and therefore, a much smaller average gross."
-    )
 
 
 # language
@@ -199,19 +195,22 @@ df["month"] = df["release_date"].apply(get_month)
 
 def display_release_date():
     fig = plt.figure(figsize=(12, 6))
-    plt.title("Number of Movies released in a particular month.")
+    st.title("Number of Movies released in a particular month.")
     sns.countplot(x="month", data=df, order=month_order)
     st.pyplot(fig)
     st.markdown(
         "It appears that **January** is the most popular month when it comes to movie releases. In Hollywood circles, this is also known as the *the dump month* when sub par movies are released by the dozen. "
     )
+
+
+def gross_month():
     # Average gross for each month.
     month_mean = pd.DataFrame(
         df[df["revenue"] > 1e8].groupby("month")["revenue"].mean()
     )
     month_mean["mon"] = month_mean.index
     fig = plt.figure(figsize=(12, 6))
-    plt.title("Average Gross by the Month for Blockbuster Movies")
+    str.title("Average Gross by the Month for Blockbuster Movies")
     sns.barplot(x="mon", y="revenue", data=month_mean, order=month_order)
     st.pyplot(fig)
     st.markdown(
@@ -221,7 +220,7 @@ def display_release_date():
 
 def display_release_day():
     fig = plt.figure(figsize=(10, 5))
-    plt.title("Number of Movies released on a particular day.")
+    st.title("Number of Movies released on a particular day.")
     sns.countplot(x="day", data=df, order=day_order)
     st.pyplot(fig)
     st.markdown(
@@ -235,6 +234,9 @@ def number_by_year():
     fig = plt.figure(figsize=(18, 5))
     year_count.plot()
     st.pyplot(fig)
+
+
+# Genre
 
 
 def display_genre():
@@ -267,18 +269,38 @@ def display_genre():
     # ctab[genres].plot(kind='line', stacked=False, colormap='jet', figsize=(12,8)).legend(loc='center left', bbox_to_anchor=(1, 0.5))
     # plt.show()
     # st.pyplot()
-    violin_genres = [
-        "Drama",
-        "Comedy",
-        "Thriller",
-        "Romance",
-        "Action",
-        "Horror",
-        "Crime",
-        "Science Fiction",
-        "Fantasy",
-        "Animation",
-    ]
+
+
+violin_genres = [
+    "Drama",
+    "Comedy",
+    "Thriller",
+    "Romance",
+    "Action",
+    "Horror",
+    "Crime",
+    "Science Fiction",
+    "Fantasy",
+    "Animation",
+]
+
+
+def genre_revenue():
+    st.markdown("### Revenue by Genre")
+    df["genres"] = (
+    df["genres"]
+        .fillna("[]")
+        .apply(ast.literal_eval)
+        .apply(lambda x: [i["name"] for i in x] if isinstance(x, list) else [])
+    )
+    s = (
+        df.apply(lambda x: pd.Series(x["genres"]), axis=1)
+        .stack()
+        .reset_index(level=1, drop=True)
+    )
+    s.name = "genre"
+    gen_df = df.drop("genres", axis=1).join(s)
+    gen_df["genre"].value_counts().shape[0]
     violin_movies = gen_df[(gen_df["genre"].isin(violin_genres))]
     fig1 = plt.figure(figsize=(18, 8))
     sns.barplot(x="genre", y="revenue", data=violin_movies)
@@ -287,9 +309,13 @@ def display_genre():
         "**Animation** movies has the largest 25-75 range as well as the median revenue among all the genres plotted. **Fantasy** and **Science Fiction** have the second and third highest median revenue respectively. "
     )
 
+
+def genre_roi():
     st.markdown("### Plot by ROI")
     fig2 = plt.figure(figsize=(18, 8))
-
+    gen_df = df.drop("genres", axis=1).join(s)
+    gen_df["genre"].value_counts().shape[0]
+    violin_movies = gen_df[(gen_df["genre"].isin(violin_genres))]
     fig2, ax = plt.subplots(nrows=1, ncols=1, figsize=(15, 8))
     sns.boxplot(x="genre", y="return", data=violin_movies, palette="muted", ax=ax)
     ax.set_ylim([0, 10])
@@ -297,6 +323,9 @@ def display_genre():
     st.markdown(
         "From the boxplot, it seems like **Animation** Movies tend to yield the highest returns on average. **Horror** Movies also tend to be a good bet. This is partially due to the nature of Horror movies being low budget compared to Fantasy Movies but being capable of generating very high revenues relative to its budget."
     )
+
+
+# Countries
 
 
 def first_elem_csv(csv):
@@ -308,7 +337,7 @@ def first_elem_csv(csv):
 
 def map_countries():
     movies = pd.read_csv("EDA_data/movies.csv", sep=";")
-    
+
     movies["primaryCountry"] = movies["countries"].apply(first_elem_csv)
     countries_count = movies.groupby("primaryCountry")[["primaryCountry"]].count()
     countries_count.rename(columns={"primaryCountry": "countryCounts"}, inplace=True)
