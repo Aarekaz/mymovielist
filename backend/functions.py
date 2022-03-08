@@ -1,9 +1,11 @@
+import imp
 import time
 
 import streamlit as st
 
 from eda import *
 from item_recommender import get_movie_recommendation
+from user_recommender import get_user_recommendation
 
 
 def home():
@@ -27,14 +29,27 @@ def home():
 
         if submit_button:
 
-            with st.spinner("Calculating Recommendations..."):
+            with st.spinner("Generating Recommendations..."):
                 time.sleep(3)
             st.success("Done!")
             new_n = n
             get_movie_recommendation(name, n)
 
     elif selection == "User Based":
-        st.text("User Based")
+        form = st.form(key="my_form", clear_on_submit=False)
+
+        user = form.text_input("Enter the USER ID you wish to be recommended upon:")
+
+        n = form.slider("How many movies do you want to be recommended?", 0, 50)
+
+        submit_button = form.form_submit_button(label="Give me recommendations!")
+
+        if submit_button:
+
+            with st.spinner("Generating Recommendations..."):
+                time.sleep(3)
+            st.success("Done!")
+            get_user_recommendation(user, n)
 
     elif selection == "Hybrid":
         st.write("Hybrid")
