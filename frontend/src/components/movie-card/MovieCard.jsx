@@ -10,7 +10,6 @@ import { category } from "../../api/mmlApi";
 import apiConfig from "../../api/apiConfig";
 
 const MovieCard = (props) => {
-  console.log("props", props);
   const item = props.item;
 
   const link = "/" + props.category + "/" + item.id;

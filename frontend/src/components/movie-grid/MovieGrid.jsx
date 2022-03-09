@@ -67,7 +67,6 @@ const MovieGrid = (props) => {
     setItems([...items, ...response.results]);
     setPage(page + 1);
   };
-  console.log("items", props.category, items);
 
   return (
     <React.Fragment>

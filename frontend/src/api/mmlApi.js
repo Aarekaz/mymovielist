@@ -52,6 +52,11 @@ const mmlApi = {
     const url = `movie/${id}/watch/providers`;
     return axiosClient.get(url, { params: {} });
   },
+
+  getSeriesDetail: (id) => {
+    const url = `tv/${id}`;
+    return axiosClient.get(url, { params: {} });
+  },
 };
 
 export default mmlApi;

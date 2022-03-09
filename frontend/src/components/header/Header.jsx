@@ -7,6 +7,7 @@ import Input from "../input/Input";
 import logo from "../../assets/tmovie.png";
 
 import "../movie-grid/movie-grid.scss";
+import Login from "../login/Login";
 
 const headerNav = [
   {
@@ -50,7 +51,6 @@ const Header = () => {
 
   const goToSearch = (event) => {
     event.preventDefault();
-    console.log("go to the search called", `/search/${keyword}`);
     if (keyword) history.push(`/search/${keyword}`);
   };
 
@@ -78,6 +78,7 @@ const Header = () => {
               <Link to={e.path}>{e.display}</Link>
             </li>
           ))}
+          <Login />
         </ul>
       </div>
     </div>
