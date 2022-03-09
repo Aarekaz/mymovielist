@@ -46,15 +46,6 @@ elif menu == "Visualizations":
 
 elif menu == "View DataSets":
     st.write("In progress")
+    show_data()
 
-# display_title_wordcloud()
-# display_overview_wordcloud()
-# display_fanchise()
-# display_language()
-# display_release_date()
-# display_release_day()
-# number_by_year()
 
-# display_genre()
-
-# st.write(map_countries())

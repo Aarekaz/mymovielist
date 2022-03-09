@@ -288,7 +288,7 @@ violin_genres = [
 def genre_revenue():
     st.markdown("### Revenue by Genre")
     df["genres"] = (
-    df["genres"]
+        df["genres"]
         .fillna("[]")
         .apply(ast.literal_eval)
         .apply(lambda x: [i["name"] for i in x] if isinstance(x, list) else [])
@@ -313,6 +313,7 @@ def genre_revenue():
 def genre_roi():
     st.markdown("### Plot by ROI")
     fig2 = plt.figure(figsize=(18, 8))
+    s.name = "genre"
     gen_df = df.drop("genres", axis=1).join(s)
     gen_df["genre"].value_counts().shape[0]
     violin_movies = gen_df[(gen_df["genre"].isin(violin_genres))]
@@ -364,4 +365,108 @@ def map_countries():
         mode="markers+text",
         textfont=dict(size=10),
     )
+    return fig
+
+
+def movie_roi():
+    movies = pd.read_csv("EDA_data/movies.csv", sep=";")
+    plt.style.use("dark_background")
+
+    # Preparing data
+    n_mvps = 10
+    mvps_roi = movies[(movies.roi < 30)][["englishTitle", "roi"]].sort_values(
+        by="roi", ascending=False
+    )[:n_mvps]
+    mvps_roi
+
+    fig, ax = plt.subplots(figsize=(9, 5.5))
+
+    ax.barh(range(n_mvps + 1, 1, -1), mvps_roi.roi, color="#f5c518", edgecolor="none")
+
+    ax.set_yticks([])
+    ax.spines["bottom"].set_linewidth(2)
+    ax.spines["left"].set_visible(False)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    ax.xaxis.grid(False)
+    ax.xaxis.set_ticks_position("none")
+
+    plt.suptitle("ROI > 30%", y=0.925)
+
+    plt.xticks(fontsize=14)
+
+    # Display movie names on bars
+    for pos, name in tuple(zip(range(n_mvps + 1, 1, -1), mvps_roi.englishTitle)):
+        ax.text(
+            0.5,
+            pos,
+            name,
+            va="center",
+            ha="left",
+            fontsize=18,
+            fontweight="regular",
+            color="#444",
+        )
+
+    return fig
+
+
+def earning_graph(movies):
+    plt.style.use("dark_background")
+
+    # Preparing data
+    n_mvps = 10
+    mvps_grossWorld = movies[["englishTitle", "grossWorld"]].sort_values(
+        by="grossWorld", ascending=False
+    )[:n_mvps]
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+
+    ax.barh(
+        range(n_mvps + 1, 1, -1),
+        mvps_grossWorld.grossWorld,
+        color="#f5c518",
+        edgecolor="none",
+    )
+
+    ax.set_yticks([])
+    ax.spines["bottom"].set_linewidth(2)
+    ax.spines["left"].set_visible(False)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    ax.xaxis.grid(False)
+
+    plt.xlabel("Millions of Dollars", labelpad=15)
+
+    # Cambibar el texto de los xticks
+    fig.canvas.draw()
+    labels = [item.get_text().replace(".", "") for item in ax.get_xticklabels()]
+    labels[0] = 0
+    labels[1] = 0
+    labels = [int(item) * 100 for item in labels]
+    labels = [
+        "{:,.2f}".format(item).replace(".", "").replace(",", ".")[:-2]
+        for item in labels
+    ]
+
+    ax.set_xticklabels(labels)
+    ax.xaxis.set_ticks_position("none")
+
+    plt.xticks(fontsize=14)
+
+    # Display movie names on bars
+    for pos, name in tuple(zip(range(n_mvps + 1, 1, -1), mvps_grossWorld.englishTitle)):
+        ax.text(
+            20000000,
+            pos,
+            name,
+            va="center",
+            ha="left",
+            fontsize=16,
+            fontweight="regular",
+            color="#444",
+        )
+
     return fig
