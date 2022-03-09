@@ -51,6 +51,17 @@ function Login() {
           title={
             <div>
               <Button
+                style={{
+                  color: "white",
+                  textTransform: "none",
+                  width: "100px",
+                }}
+                onClick={() => (window.open = "http://localhost:8501/")}
+              >
+                Dashboard
+              </Button>
+              <br />
+              <Button
                 onClick={handleLogout}
                 style={{
                   color: "white",
@@ -60,18 +71,6 @@ function Login() {
                 }}
               >
                 Logout
-              </Button>
-
-              <br />
-              <Button
-                style={{
-                  color: "white",
-                  textTransform: "none",
-                  width: "100px",
-                }}
-                onClick={() => (window.href = "http://")}
-              >
-                Dashboard
               </Button>
             </div>
           }
