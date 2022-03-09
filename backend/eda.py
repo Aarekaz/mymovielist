@@ -412,7 +412,8 @@ def movie_roi():
     return fig
 
 
-def earning_graph(movies):
+def earning_graph():
+    movies = pd.read_csv("EDA_data/movies.csv", sep=";")
     plt.style.use("dark_background")
 
     # Preparing data
