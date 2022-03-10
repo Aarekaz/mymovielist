@@ -18,6 +18,7 @@ const CastList = (props) => {
     };
     getCredits();
   }, [category, props.id]);
+  
   return (
     <div className="casts">
       {casts.map((item, i) => (

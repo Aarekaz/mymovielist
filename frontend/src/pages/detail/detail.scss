@@ -91,10 +91,13 @@
 
 .casts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(127px, 1fr));
   gap: 10px;
+  grid-auto-flow: column;
+  overflow-x: auto;
 
   &__item {
+    width: 127px;
     &__img {
       padding-top: 160px;
       background-size: cover;
@@ -108,13 +111,14 @@
 }
 
 .providers {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 2fr));
-    gap: 10px;
-
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 2fr));
+  gap: 10px;
+  grid-auto-flow: column;
+  overflow-x: auto;
 
   &__item {
+    width: 140px;
     &__img {
       padding-top: 180px;
       background-size: contain;

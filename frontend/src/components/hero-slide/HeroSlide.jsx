@@ -75,7 +75,7 @@ const HeroSlideItem = props => {
     const setModalActive = async () => {
         const modal = document.querySelector(`#modal_${item.id}`);
 
-        const videos = await mmlApi.getvideos(category.movie, item.id);
+        const videos = await mmlApi.getVideos(category.movie, item.id);
 
         if (videos.results.length > 0) {
             const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;

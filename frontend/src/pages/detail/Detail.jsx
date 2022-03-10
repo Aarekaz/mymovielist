@@ -11,29 +11,36 @@ import propTypes from "prop-types";
 import Button, { OutlineButton } from "../../components/button/Button";
 
 import MovieList from "../../components/movie-list/MovieList";
+import SeasonTab from "./SeasonTab";
 
 const Detail = () => {
   const [providers, setProviders] = useState({});
+  const [seriesDetail, setSeriesDetail] = useState(null);
+  const [item, setItem] = useState(null);
+
   const { category, id } = useParams();
 
-  const [item, setItem] = useState(null);
+  const isSeries = category === "tv";
 
   useEffect(() => {
     const getDetail = async () => {
-      const [response, providerRes] = await Promise.all([
+      const [response, providerRes, showDetail] = await Promise.all([
         mmlApi.detail(category, id, { params: {} }),
         mmlApi.getProviders(id),
+        (isSeries && mmlApi.getSeriesDetail(id)) || null,
       ]);
 
       const data = providerRes.results.US;
-
       setItem(response);
       setProviders(data);
+
+      if (isSeries) setSeriesDetail(showDetail);
       window.scrollTo(0, 0);
     };
     getDetail();
   }, [category, id]);
-  console.log("providers", providers);
+
+
   return (
     <React.Fragment>
       {item && (
@@ -115,18 +122,7 @@ const Detail = () => {
                     Stream Unofficiallly
                   </Button>
                 ) : (
-                  <Button
-                    className="small"
-                    onClick={() =>
-                      window.open(
-                        "https://www.2embed.ru/embed/tmdb/tv?id=" +
-                          item.id +
-                          "&s=1&e=1"
-                      )
-                    }
-                  >
-                    Stream S1 E1
-                  </Button>
+                  <SeasonTab seasons={seriesDetail?.seasons} id={id} />
                 )}
               </div>
               {/* <ul> */}

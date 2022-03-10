@@ -2,6 +2,7 @@ import imp
 import time
 
 import streamlit as st
+from pkg_resources import Distribution
 from pyparsing import col
 
 from eda import *
@@ -57,9 +58,20 @@ def home():
 
 def show_viz():
     st.title("Visualizations Based on the Dataset")
+    st.subheader(
+        "The following visualizations are based on the data in dataset. They have been done based on different scenarios and also on the basis of the value they provide."
+    )
     options = st.radio(
         "",
-        ("Based on Title", "Franchise", "Language", "Release Time", "Genre", "Country"),
+        (
+            "Based on Title",
+            "Franchise",
+            "Language",
+            "Release Time",
+            "Genre",
+            "Earning",
+            "Country",
+        ),
     )
     if options == "Based on Title":
         col1, col2 = st.columns(2)
@@ -106,17 +118,26 @@ def show_viz():
             st.write(display_genre())
         with col2:
             st.write(genre_revenue())
-
         st.write(genre_roi())
 
+    elif options == "Earning":
+        st.write("Visualualization based on Earnings")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.write(movie_roi())
+
+        with col2:
+            st.write(earning_graph())
     elif options == "Country":
         st.write("Distribution of various countries of movie in the dataset")
         st.write(map_countries())
 
 
 def show_data():
+    st.title(" A look at the data that we are using for our project")
     st.markdown(
-        "The dataset below was obtained through the TMDB API. The movies available in this dataset are in correspondence with the movies that are listed in the **MovieLens Latest Full Dataset** comprising of 26 million ratings on 45,000 movies from 27,000 users."
+        "The datasets below was obtained through TMDB and IDMB. We also used THe movie lens data into our project. The movies available in this dataset are in correspondence with the movies that are listed in the **MovieLens Latest Full Dataset** comprising of 26 million ratings on 45,000 movies from 27,000 users."
     )
     #     st.write("The features of the dataset are  ")
     #     st.markdown(
@@ -151,5 +172,5 @@ def show_data():
     # movies = pd.read_csv("EDA_data/movies_metadata.csv", sep=";")
     # st.write(movies.head())
 
-    ratings = pd.read_csv("EDA_data/movies_metadata.csv", sep=";")
-    st.write(ratings.head())
+    movies = pd.read_csv("EDA_data/movies_metadata.csv", on_bad_lines="skip")
+    st.write(movies.head())
