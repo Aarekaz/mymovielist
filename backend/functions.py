@@ -33,7 +33,6 @@ def home():
             with st.spinner("Generating Recommendations..."):
                 time.sleep(3)
             st.success("Done!")
-            new_n = n
             get_movie_recommendation(name, n)
 
     elif selection == "User Based":
