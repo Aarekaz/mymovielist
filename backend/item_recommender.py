@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import requests
+import itertools
 import seaborn as sns
 import streamlit as st
 from scipy.sparse import csr_matrix
@@ -93,7 +94,7 @@ def get_movie_recommendation(movie_name: str, n):
         for row in df_f.iterrows():
             final_list.append(row[1].to_dict())
         
-        with open('notebooks\json_data\data.json', 'w') as f:
+        with open('notebooks\json_data\data_item.json', 'w') as f:
             f.write(json.dumps(final_list, indent=4))
 
         # with open('json_data/data.json', 'w', encoding='utf-8') as f:

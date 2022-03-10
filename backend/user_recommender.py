@@ -1,11 +1,17 @@
+import json
+from turtle import pos
+
 import numpy as np
 import pandas as pd
+import requests
+import streamlit as st
 from sklearn.metrics import pairwise_distances
 from sklearn.metrics.pairwise import cosine_similarity
 
 movies = pd.read_csv("data/movies.csv", encoding="Latin1")
 Ratings = pd.read_csv("data/ratings.csv")
 Tags = pd.read_csv("data/tags.csv", encoding="Latin1")
+links = pd.read_csv("data/links.csv",header=0,delim_whitespace=False)
 
 Mean = Ratings.groupby(by="userId", as_index=False)["rating"].mean()
 Rating_avg = pd.merge(Ratings, Mean, on="userId")
@@ -66,8 +72,14 @@ def get_user_similar_movies(user1, user2):
 Rating_avg = Rating_avg.astype({"movieId": str})
 Movie_user = Rating_avg.groupby(by="userId")["movieId"].apply(lambda x: ",".join(x))
 
+poster = []
+api_key = "40f84ea0b622bc4257dabf9631a401dc"
+api_version = 3
+api_base_url = f"https://api.themoviedb.org/{api_version}"
 
 def user_recomender(user, n):
+    poster.clear()
+    global df_f
     Movie_seen_by_user = check.columns[
         check[check.index == user].notna().any()
     ].tolist()
@@ -98,5 +110,70 @@ def user_recomender(user, n):
     data = pd.DataFrame({"movieId": Movies_under_consideration, "score": score})
     top_recommendation = data.sort_values(by="score", ascending=False).head(n)
     Movie_Name = top_recommendation.merge(movies, how="inner", on="movieId")
+    new_df = links.loc[links['movieId'].isin(Movie_Name['movieId'])]
+    df_f = pd.merge(Movie_Name,new_df)
+
+    for movie_id in df_f['tmdbId']:    
+        endpoint_path = f"/movie/{movie_id}"
+        endpoint = f"{api_base_url}{endpoint_path}?api_key={api_key}&language=en-US"
+        data = requests.get(endpoint)
+        data = data.json()
+        poster_path = data['poster_path']
+        full_path = "https://image.tmdb.org/t/p/w500/"+poster_path
+        poster.append(full_path)
+
+    df_f['Poster'] = poster
+
+    js = df_f.to_json(orient='index')
+
+    final_list = list()
+    for row in df_f.iterrows():
+        final_list.append(row[1].to_dict())
+
+    with open('notebooks\json_data\data_user.json', 'w') as f:
+        f.write(json.dumps(final_list, indent=4))
+
+    # with open('json_data/data.json', 'w', encoding='utf-8') as f:
+    #     json.dump(js, f, ensure_ascii=False, indent=4)
+    print(json.dumps(final_list, indent=4))
+    st.write("The ", n, "movies recommended to you similar to", movie_name, "are:")
+
     Movie_Names = Movie_Name.title.values.tolist()
     return Movie_Names
+
+def movie_bar(n):
+    front_end = f"http://localhost:3000/movie/"
+
+    ncol = n
+    wcol = 4
+
+    cols = st.columns(ncol)
+
+    for i in range(ncol):
+        col = cols[i % wcol]
+        # col.image(df_f['tmdbId'][i],use_column_width = "always")
+
+        # {front_end}{tmdb_id}
+
+        poster_link = f"{df_f['Poster'][i]}"
+        tmdb_id = f"{df_f['tmdbId'][i]}"
+
+        with col:
+            # st.markdown(f"[![Foo]({poster_link})]({front_end}+{tmdb_id})")
+            st.markdown(f'''
+                    <style>
+                        img{"""{
+                            width: 100%;
+                            height: auto;
+                            max-width: 50vw;
+                            }
+                            """
+                        }
+                    </style>
+                    <a href="{front_end}{tmdb_id}">
+                        <img src="{poster_link}"/>
+                    </a>
+                ''',
+                unsafe_allow_html=True
+            )
+

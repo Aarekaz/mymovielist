@@ -1,0 +1,92 @@
+[
+    {
+        "movieId": 177593,
+        "score": 4.638779797945172,
+        "title": "Three Billboards Outside Ebbing, Missouri (2017)",
+        "genres": "Crime|Drama",
+        "imdbId": 5027774,
+        "tmdbId": 359940.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//bRYLt8fV82tdVoDppSFTZIcJiLN.jpg"
+    },
+    {
+        "movieId": 1150,
+        "score": 4.468417937015032,
+        "title": "Return of Martin Guerre, The (Retour de Martin Guerre, Le) (1982)",
+        "genres": "Drama",
+        "imdbId": 84589,
+        "tmdbId": 4483.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//74wCIIhCSxX63nD9pu39QwgX6Lv.jpg"
+    },
+    {
+        "movieId": 750,
+        "score": 4.326894876558922,
+        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+        "genres": "Comedy|War",
+        "imdbId": 57012,
+        "tmdbId": 935.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//3clod4q8qkgU7pyOmZ7Re0G7GDc.jpg"
+    },
+    {
+        "movieId": 858,
+        "score": 4.252183739597862,
+        "title": "Godfather, The (1972)",
+        "genres": "Crime|Drama",
+        "imdbId": 68646,
+        "tmdbId": 238.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg"
+    },
+    {
+        "movieId": 922,
+        "score": 4.240298345870325,
+        "title": "Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)",
+        "genres": "Drama|Film-Noir|Romance",
+        "imdbId": 43014,
+        "tmdbId": 599.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//zt8aQ6ksqK6p1AopC5zVTDS9pKT.jpg"
+    },
+    {
+        "movieId": 1208,
+        "score": 4.239536252624889,
+        "title": "Apocalypse Now (1979)",
+        "genres": "Action|Drama|War",
+        "imdbId": 78788,
+        "tmdbId": 28.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//fpM34wbSvkmR0wFQSmcAsZrTYvw.jpg"
+    },
+    {
+        "movieId": 1673,
+        "score": 4.239004985606758,
+        "title": "Boogie Nights (1997)",
+        "genres": "Drama",
+        "imdbId": 118749,
+        "tmdbId": 4995.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//cLyH1ThGaNazatJblc36Mthb0ea.jpg"
+    },
+    {
+        "movieId": 1136,
+        "score": 4.228038641934429,
+        "title": "Monty Python and the Holy Grail (1975)",
+        "genres": "Adventure|Comedy|Fantasy",
+        "imdbId": 71853,
+        "tmdbId": 762.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//8AVb7tyxZRsbKJNOTJHQZl7JYWO.jpg"
+    },
+    {
+        "movieId": 912,
+        "score": 4.219839871639828,
+        "title": "Casablanca (1942)",
+        "genres": "Drama|Romance",
+        "imdbId": 34583,
+        "tmdbId": 289.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//5K7cOHoay2mZusSLezBOY0Qxh8a.jpg"
+    },
+    {
+        "movieId": 1199,
+        "score": 4.215007103066318,
+        "title": "Brazil (1985)",
+        "genres": "Fantasy|Sci-Fi",
+        "imdbId": 88846,
+        "tmdbId": 68.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//d0PibPzCK4fVikjoD1PqHovbvkt.jpg"
+    }
+]
