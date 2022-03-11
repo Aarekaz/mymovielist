@@ -45,8 +45,7 @@ function Login() {
     signOut();
   };
   const handleRedirect = () => {
-    window.open("https://www.google.com/","_blank");
-
+    window.open("http://localhost:8501/", "_blank");
   };
   return (
     <div>
