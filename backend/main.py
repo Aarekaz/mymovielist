@@ -14,6 +14,7 @@ st.write(
     "<style>div.row-widget.stRadio > div{flex-direction:row;}</style>",
     unsafe_allow_html=True,
 )
+st.sidebar.image('final.png', width=200)
 st.sidebar.title("My Movie List")
 st.sidebar.write(
     "My Movie List is a movie recommendation system based on item based collaborative filtering algorithm"
