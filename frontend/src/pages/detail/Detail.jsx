@@ -26,7 +26,7 @@ const Detail = () => {
     const getDetail = async () => {
       const [response, providerRes, showDetail] = await Promise.all([
         mmlApi.detail(category, id, { params: {} }),
-        mmlApi.getProviders(id),
+        mmlApi.getProviders(id, category),
         (isSeries && mmlApi.getSeriesDetail(id)) || null,
       ]);
 
@@ -39,7 +39,6 @@ const Detail = () => {
     };
     getDetail();
   }, [category, id]);
-
 
   return (
     <React.Fragment>

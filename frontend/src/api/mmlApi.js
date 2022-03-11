@@ -48,8 +48,8 @@ const mmlApi = {
     return axiosClient.get(url, { params: {} });
   },
 
-  getProviders: (id) => {
-    const url = `movie/${id}/watch/providers`;
+  getProviders: (id, type) => {
+    const url = `${type}/${id}/watch/providers`;
     return axiosClient.get(url, { params: {} });
   },
 

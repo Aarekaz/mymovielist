@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 // refresh token
 import { refreshTokenSetup } from "./refreshToken";
 import Logout from "./Logout";
+import { __RouterContext } from "react-router";
 
 const clientId =
   "766782824770-ggibhlciuo3gcc39piu75a5kq92ft9jk.apps.googleusercontent.com";
@@ -43,7 +44,10 @@ function Login() {
   const handleLogout = () => {
     signOut();
   };
+  const handleRedirect = () => {
+    window.open("https://www.google.com/","_blank");
 
+  };
   return (
     <div>
       {isLoggedIn ? (
@@ -56,7 +60,7 @@ function Login() {
                   textTransform: "none",
                   width: "100px",
                 }}
-                onClick={() => (window.open = "http://localhost:8501/")}
+                onClick={handleRedirect}
               >
                 Dashboard
               </Button>
