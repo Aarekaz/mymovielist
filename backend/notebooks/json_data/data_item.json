@@ -1,0 +1,38 @@
+[
+    {
+        "Movie ID": 77561,
+        "Title": "Iron Man 2 (2010)",
+        "Genre": "Action|Adventure|Sci-Fi|Thriller|IMAX",
+        "Distance": 0.30749155823084806,
+        "imdbId": 1228705,
+        "tmdbId": 10138.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg"
+    },
+    {
+        "Movie ID": 60069,
+        "Title": "WALL\u00c2\u00b7E (2008)",
+        "Genre": "Adventure|Animation|Children|Romance|Sci-Fi",
+        "Distance": 0.2981377590200208,
+        "imdbId": 910970,
+        "tmdbId": 10681.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//Agc6lw8pb6BIGVeguvdjDT0p9Mb.jpg"
+    },
+    {
+        "Movie ID": 58559,
+        "Title": "Dark Knight, The (2008)",
+        "Genre": "Action|Crime|Drama|IMAX",
+        "Distance": 0.28583480118216587,
+        "imdbId": 468569,
+        "tmdbId": 155.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+    },
+    {
+        "Movie ID": 89745,
+        "Title": "Avengers, The (2012)",
+        "Genre": "Action|Adventure|Sci-Fi|IMAX",
+        "Distance": 0.2853194248771902,
+        "imdbId": 848228,
+        "tmdbId": 24428.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//RYMX2wcKCBAr24UyPD7xwmjaTn.jpg"
+    }
+]
