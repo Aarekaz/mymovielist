@@ -39,7 +39,7 @@ def home():
     elif selection == "User Based":
         form = st.form(key="my_form", clear_on_submit=False)
 
-        user = form.text_input("Enter the USER ID you wish to be recommended upon:")
+        user = form.number_input("Enter the USER ID you wish to be recommended upon:")
 
         n = form.slider("How many movies do you want to be recommended?", 0, 50)
 
@@ -185,5 +185,5 @@ def show_data():
         st.write(rec_movie.head())
 
     with col2:
-        st.maarkdown(" #### Ratings Dataset ")
+        st.markdown(" #### Ratings Dataset ")
         st.write(rec_rating.head())

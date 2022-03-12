@@ -1,7 +1,7 @@
 [
     {
         "movieId": 177593,
-        "score": 4.593322695641325,
+        "score": 4.950687137519603,
         "title": "Three Billboards Outside Ebbing, Missouri (2017)",
         "genres": "Crime|Drama",
         "imdbId": 5027774,
@@ -10,7 +10,7 @@
     },
     {
         "movieId": 1150,
-        "score": 4.422963792609654,
+        "score": 4.780330709219958,
         "title": "Return of Martin Guerre, The (Retour de Martin Guerre, Le) (1982)",
         "genres": "Drama",
         "imdbId": 84589,
@@ -18,26 +18,8 @@
         "Poster": "https://image.tmdb.org/t/p/w500//74wCIIhCSxX63nD9pu39QwgX6Lv.jpg"
     },
     {
-        "movieId": 1104,
-        "score": 4.368732000977464,
-        "title": "Streetcar Named Desire, A (1951)",
-        "genres": "Drama",
-        "imdbId": 44081,
-        "tmdbId": 702.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//aicdlO5vt7z2ARm279eGzJeYCLQ.jpg"
-    },
-    {
-        "movieId": 246,
-        "score": 4.263505551866934,
-        "title": "Hoop Dreams (1994)",
-        "genres": "Documentary",
-        "imdbId": 110057,
-        "tmdbId": 14275.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//7qHwh3mFJs7ldwzGSWsBLmgecfj.jpg"
-    },
-    {
         "movieId": 750,
-        "score": 4.260091080982935,
+        "score": 4.638808066636518,
         "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
         "genres": "Comedy|War",
         "imdbId": 57012,
@@ -45,48 +27,12 @@
         "Poster": "https://image.tmdb.org/t/p/w500//3clod4q8qkgU7pyOmZ7Re0G7GDc.jpg"
     },
     {
-        "movieId": 162,
-        "score": 4.204633180524407,
-        "title": "Crumb (1994)",
+        "movieId": 246,
+        "score": 4.620868458299768,
+        "title": "Hoop Dreams (1994)",
         "genres": "Documentary",
-        "imdbId": 109508,
-        "tmdbId": 26564.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//q3fFSO9jZkbLVjMtw47nAdOftnd.jpg"
-    },
-    {
-        "movieId": 1235,
-        "score": 4.198938721531814,
-        "title": "Harold and Maude (1971)",
-        "genres": "Comedy|Drama|Romance",
-        "imdbId": 67185,
-        "tmdbId": 343.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//lOgdrMU702HaNan773MlBH6D1Zz.jpg"
-    },
-    {
-        "movieId": 922,
-        "score": 4.194841228207094,
-        "title": "Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)",
-        "genres": "Drama|Film-Noir|Romance",
-        "imdbId": 43014,
-        "tmdbId": 599.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//zt8aQ6ksqK6p1AopC5zVTDS9pKT.jpg"
-    },
-    {
-        "movieId": 318,
-        "score": 4.194383862249847,
-        "title": "Shawshank Redemption, The (1994)",
-        "genres": "Crime|Drama",
-        "imdbId": 111161,
-        "tmdbId": 278.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
-    },
-    {
-        "movieId": 1208,
-        "score": 4.194080724527849,
-        "title": "Apocalypse Now (1979)",
-        "genres": "Action|Drama|War",
-        "imdbId": 78788,
-        "tmdbId": 28.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//fpM34wbSvkmR0wFQSmcAsZrTYvw.jpg"
+        "imdbId": 110057,
+        "tmdbId": 14275.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//7qHwh3mFJs7ldwzGSWsBLmgecfj.jpg"
     }
 ]
