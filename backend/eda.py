@@ -68,9 +68,12 @@ overview_corpus = " ".join(df["overview"])
 
 
 def display_title_wordcloud():
-    title_wordcloud = WordCloud(
-        stopwords=STOPWORDS, background_color="black", height=2000, width=4000
-    ).generate(title_corpus)
+    @st.cache
+    def load_title():
+        title_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(title_corpus)
+        return title_wordcloud
+
+    title_wordcloud = load_title()
     # plt.figure(figsize=(16, 8))
     # plt.imshow(title_wordcloud)
     # plt.axis("off")
@@ -80,11 +83,12 @@ def display_title_wordcloud():
         "The word **Love** is the most commonly used word in movie titles. **Girl**, **Day** and **Man** are also among the most commonly occuring words. This encapsulates the idea of the ubiquitious presence of romance in movies pretty well."
     )
 
-
 def display_overview_wordcloud():
-    overview_wordcloud = WordCloud(
-        stopwords=STOPWORDS, background_color="black", height=2000, width=4000
-    ).generate(overview_corpus)
+    @st.cache
+    def load_overview():
+        overview_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(overview_corpus)
+        return overview_wordcloud
+    overview_wordcloud = load_overview()   
     # plt.figure(figsize=(16,8))
     # plt.imshow(overview_wordcloud)
     # plt.axis('off')
