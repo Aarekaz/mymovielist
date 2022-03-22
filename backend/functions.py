@@ -16,7 +16,7 @@ def home():
 
     selection = st.selectbox(
         "Which type of reccomendation do you want?",
-        ["Item Based", "User Based", "Hybrid"],
+        ["Item Based", "User Based"],
     )
     if selection == "Item Based":
         form = st.form(key="my_form", clear_on_submit=False)
@@ -51,9 +51,6 @@ def home():
                 time.sleep(3)
             st.success("Done!")
             user_recomender(user, n)
-
-    elif selection == "Hybrid":
-        st.write("Hybrid")
 
 
 def show_viz():

@@ -1,38 +1,82 @@
 [
     {
         "movieId": 177593,
-        "score": 4.950687137519603,
+        "score": 4.280986606216779,
         "title": "Three Billboards Outside Ebbing, Missouri (2017)",
         "genres": "Crime|Drama",
         "imdbId": 5027774,
-        "tmdbId": 359940.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//bRYLt8fV82tdVoDppSFTZIcJiLN.jpg"
+        "tmdbId": 359940.0
+    },
+    {
+        "movieId": 158966,
+        "score": 4.27744510291803,
+        "title": "Captain Fantastic (2016)",
+        "genres": "Drama",
+        "imdbId": 3553976,
+        "tmdbId": 334533.0
+    },
+    {
+        "movieId": 96430,
+        "score": 4.1569498069498065,
+        "title": "Odd Life of Timothy Green, The (2012)",
+        "genres": "Comedy|Drama|Fantasy",
+        "imdbId": 1462769,
+        "tmdbId": 71864.0
     },
     {
         "movieId": 1150,
-        "score": 4.780330709219958,
+        "score": 4.110627151948552,
         "title": "Return of Martin Guerre, The (Retour de Martin Guerre, Le) (1982)",
         "genres": "Drama",
         "imdbId": 84589,
-        "tmdbId": 4483.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//74wCIIhCSxX63nD9pu39QwgX6Lv.jpg"
+        "tmdbId": 4483.0
     },
     {
         "movieId": 750,
-        "score": 4.638808066636518,
+        "score": 3.9691027278735866,
         "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
         "genres": "Comedy|War",
         "imdbId": 57012,
-        "tmdbId": 935.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//3clod4q8qkgU7pyOmZ7Re0G7GDc.jpg"
+        "tmdbId": 935.0
     },
     {
-        "movieId": 246,
-        "score": 4.620868458299768,
-        "title": "Hoop Dreams (1994)",
+        "movieId": 858,
+        "score": 3.894386296996125,
+        "title": "Godfather, The (1972)",
+        "genres": "Crime|Drama",
+        "imdbId": 68646,
+        "tmdbId": 238.0
+    },
+    {
+        "movieId": 922,
+        "score": 3.8825072980812014,
+        "title": "Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)",
+        "genres": "Drama|Film-Noir|Romance",
+        "imdbId": 43014,
+        "tmdbId": 599.0
+    },
+    {
+        "movieId": 1673,
+        "score": 3.881210609413799,
+        "title": "Boogie Nights (1997)",
+        "genres": "Drama",
+        "imdbId": 118749,
+        "tmdbId": 4995.0
+    },
+    {
+        "movieId": 159817,
+        "score": 3.8727550141651403,
+        "title": "Planet Earth (2006)",
         "genres": "Documentary",
-        "imdbId": 110057,
-        "tmdbId": 14275.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//7qHwh3mFJs7ldwzGSWsBLmgecfj.jpg"
+        "imdbId": 795176,
+        "tmdbId": 192040.0
+    },
+    {
+        "movieId": 1136,
+        "score": 3.8702453240551344,
+        "title": "Monty Python and the Holy Grail (1975)",
+        "genres": "Adventure|Comedy|Fantasy",
+        "imdbId": 71853,
+        "tmdbId": 762.0
     }
 ]
