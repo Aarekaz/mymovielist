@@ -1,6 +1,7 @@
 import ast
 import datetime
 import json
+from tarfile import DEFAULT_FORMAT
 
 import chart_studio
 import chart_studio.plotly as py
@@ -32,11 +33,10 @@ sns.set_style("whitegrid")
 sns.set(font_scale=1.25)
 pd.set_option("display.max_colwidth", 50)
 
+
+
+# Data Wrangling    
 df = pd.read_csv("EDA_data/movies_metadata.csv")
-
-
-# Data Wrangling
-
 df = df.drop(["imdb_id"], axis=1)
 df[df["original_title"] != df["title"]][["title", "original_title"]].head()
 df = df.drop("original_title", axis=1)
@@ -71,29 +71,34 @@ def display_title_wordcloud():
     @st.cache
     def load_title():
         title_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(title_corpus)
-        return title_wordcloud
+        title_array = title_wordcloud.to_array()
+        return title_array
 
-    title_wordcloud = load_title()
+    title_array = load_title()
     # plt.figure(figsize=(16, 8))
     # plt.imshow(title_wordcloud)
     # plt.axis("off")
     # plt.show()
-    st.image(title_wordcloud.to_array())
+    st.image(title_array)
     st.markdown(
         "The word **Love** is the most commonly used word in movie titles. **Girl**, **Day** and **Man** are also among the most commonly occuring words. This encapsulates the idea of the ubiquitious presence of romance in movies pretty well."
     )
+
+
+    
 
 def display_overview_wordcloud():
     @st.cache
     def load_overview():
         overview_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(overview_corpus)
-        return overview_wordcloud
-    overview_wordcloud = load_overview()   
+        overview_array = overview_wordcloud.to_array()
+        return overview_array
+    overview_array = load_overview()   
     # plt.figure(figsize=(16,8))
     # plt.imshow(overview_wordcloud)
     # plt.axis('off')
     # plt.show()
-    st.image(overview_wordcloud.to_array())
+    st.image(overview_array)
     st.markdown(
         "**Life** is the most commonly used word in Movie titles. **One** and **Find** are also popular in Movie Blurbs. Together with **Love**, **Man** and **Girl**, these wordclouds give us a pretty good idea of the most popular themes present in movies. "
     )
@@ -126,33 +131,39 @@ con_df = con_df[con_df["country"] != "United States of America"]
 
 # Franchise Movies
 def display_fanchise():
-    df_fran = df[df["belongs_to_collection"].notnull()]
-    df_fran["belongs_to_collection"] = (
-        df_fran["belongs_to_collection"]
-        .apply(ast.literal_eval)
-        .apply(lambda x: x["name"] if isinstance(x, dict) else np.nan)
-    )
-    df_fran = df_fran[df_fran["belongs_to_collection"].notnull()]
-    fran_pivot = df_fran.pivot_table(
-        index="belongs_to_collection",
-        values="revenue",
-        aggfunc={"revenue": ["mean", "sum", "count"]},
-    ).reset_index()
-
-    st.dataframe(fran_pivot.sort_values("sum", ascending=False).head(10))
+    @st.cache
+    def disp_dffran():
+        df_fran = df[df["belongs_to_collection"].notnull()]
+        df_fran["belongs_to_collection"] = (
+            df_fran["belongs_to_collection"]
+            .apply(ast.literal_eval)
+            .apply(lambda x: x["name"] if isinstance(x, dict) else np.nan)
+        )
+        df_fran = df_fran[df_fran["belongs_to_collection"].notnull()]
+        fran_pivot = df_fran.pivot_table(
+            index="belongs_to_collection",
+            values="revenue",
+            aggfunc={"revenue": ["mean", "sum", "count"]},
+        ).reset_index()
+        frant_sort = fran_pivot.sort_values("sum", ascending=False).head(10)
+        return frant_sort
+    fran_sort = disp_dffran()    
+    
+    st.dataframe(fran_sort)
 
 
 # language
 
 
 def display_language():
+    
     df["original_language"].drop_duplicates().shape[0]
     lang_df = pd.DataFrame(df["original_language"].value_counts())
     lang_df["language"] = lang_df.index
     lang_df.columns = ["number", "language"]
 
     fig = plt.figure(figsize=(12, 5))
-    sns.barplot(x="language", y="number", data=lang_df.iloc[1:11])
+    bar = sns.barplot(x="language", y="number", data=lang_df.iloc[1:11])
     st.pyplot(fig)
     st.markdown(
         "Apart from English,**French** and **Italian** are the most commonly occurring languages after English. **Japanese** and **Hindi** form the majority as far as Asian Languages are concerned."
