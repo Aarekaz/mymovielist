@@ -1,38 +1,65 @@
 [
     {
-        "Movie ID": 356,
-        "Title": "Forrest Gump (1994)",
-        "Genre": "Comedy|Drama|Romance|War",
-        "Distance": 0.2757162619704605,
-        "imdbId": 109830,
-        "tmdbId": 13.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//saHP97rTPS5eLmrLQEcANmKrsFl.jpg"
+        "Movie ID": 1089,
+        "Title": "Reservoir Dogs (1992)",
+        "Genre": "Crime|Mystery|Thriller",
+        "Distance": 0.3601618816661438,
+        "imdbId": 105236,
+        "tmdbId": 500.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//lsBnfheKZBO3UKU7lVHIeGZLWuF.jpg"
     },
     {
-        "Movie ID": 47,
-        "Title": "Seven (a.k.a. Se7en) (1995)",
-        "Genre": "Mystery|Thriller",
-        "Distance": 0.273683361743537,
-        "imdbId": 114369,
-        "tmdbId": 807.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//69Sns8WoET6CfaYlIkHbla4l7nC.jpg"
+        "Movie ID": 2959,
+        "Title": "Fight Club (1999)",
+        "Genre": "Action|Crime|Drama|Thriller",
+        "Distance": 0.35830464305385956,
+        "imdbId": 137523,
+        "tmdbId": 550.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
     },
     {
-        "Movie ID": 318,
-        "Title": "Shawshank Redemption, The (1994)",
+        "Movie ID": 1193,
+        "Title": "One Flew Over the Cuckoo's Nest (1975)",
+        "Genre": "Drama",
+        "Distance": 0.35721169802190134,
+        "imdbId": 73486,
+        "tmdbId": 510.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//3jcbDmRFiQ83drXNOvRDeKHxS0C.jpg"
+    },
+    {
+        "Movie ID": 296,
+        "Title": "Pulp Fiction (1994)",
+        "Genre": "Comedy|Crime|Drama|Thriller",
+        "Distance": 0.3524091724569305,
+        "imdbId": 110912,
+        "tmdbId": 680.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//fIE3lAGcZDV1G6XM5KmuWnNsPp1.jpg"
+    },
+    {
+        "Movie ID": 260,
+        "Title": "Star Wars: Episode IV - A New Hope (1977)",
+        "Genre": "Action|Adventure|Sci-Fi",
+        "Distance": 0.3490606863631053,
+        "imdbId": 76759,
+        "tmdbId": 11.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg"
+    },
+    {
+        "Movie ID": 1213,
+        "Title": "Goodfellas (1990)",
         "Genre": "Crime|Drama",
-        "Distance": 0.2498035125887823,
-        "imdbId": 111161,
-        "tmdbId": 278.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
+        "Distance": 0.2959610898225522,
+        "imdbId": 99685,
+        "tmdbId": 769.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg"
     },
     {
-        "Movie ID": 593,
-        "Title": "Silence of the Lambs, The (1991)",
-        "Genre": "Crime|Horror|Thriller",
-        "Distance": 0.24923159551071006,
-        "imdbId": 102926,
-        "tmdbId": 274.0,
-        "Poster": "https://image.tmdb.org/t/p/w500//rplLJ2hPcOQmkFhTqUte0MkEaO2.jpg"
+        "Movie ID": 1221,
+        "Title": "Godfather: Part II, The (1974)",
+        "Genre": "Crime|Drama",
+        "Distance": 0.15415876669735074,
+        "imdbId": 71562,
+        "tmdbId": 240.0,
+        "Poster": "https://image.tmdb.org/t/p/w500//ecBRkXerAZqRRUfR8Lt3L3Dh6J5.jpg"
     }
 ]

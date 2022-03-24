@@ -113,7 +113,7 @@ def movie_bar(n):
     front_end = f"http://localhost:3000/movie/"
 
     ncol = n
-    wcol = 4
+    wcol = 10
 
     cols = st.columns(ncol)
 
