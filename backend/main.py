@@ -6,7 +6,7 @@ from functions import *
 
 st.set_page_config(
     page_title="My Movie List",
-    page_icon="🖖",
+    page_icon="🖖",#can someone change the icon, also for the react app
     layout="wide",
     initial_sidebar_state="auto",
 )

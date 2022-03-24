@@ -144,6 +144,7 @@ def movie_bar(n):
                 ''',
                 unsafe_allow_html=True
             )
+            
 
     
             

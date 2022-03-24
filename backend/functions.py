@@ -8,11 +8,17 @@ from pyparsing import col
 from eda import *
 from item_recommender import get_movie_recommendation
 from user_recommender import user_recomender
+from popular_movies import LinkToFrontend
 
 
 def home():
     st.header("Welcome to My Movie List")
-    st.markdown("![](https://media.giphy.com/media/3ohhwDMC187JqL69DG/giphy.gif)")
+    st.markdown("***")
+    # st.markdown("![](https://media.giphy.com/media/3ohhwDMC187JqL69DG/giphy.gif)")
+    LinkToFrontend()
+    st.markdown("***")
+    st.markdown("##")
+
 
     selection = st.selectbox(
         "Which type of reccomendation do you want?",
