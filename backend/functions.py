@@ -7,8 +7,8 @@ from pyparsing import col
 
 from eda import *
 from item_recommender import get_movie_recommendation
-from user_recommender import user_recomender
 from popular_movies import LinkToFrontend
+from user_recommender import user_recomender
 
 
 def home():
@@ -18,7 +18,6 @@ def home():
     LinkToFrontend()
     st.markdown("***")
     st.markdown("##")
-
 
     selection = st.selectbox(
         "Which type of reccomendation do you want?",
@@ -71,7 +70,7 @@ def show_viz():
             "Franchise",
             "Language",
             "Release Time",
-            "Genre",
+            
             "Earning",
             "Country",
         ),
@@ -112,16 +111,16 @@ def show_viz():
         with col4:
             st.write(number_by_year())
 
-    elif options == "Genre":
-        st.write("Distribution of various genres of movie in the dataset")
+    # elif options == "Genre":
+    #     st.write("Distribution of various genres of movie in the dataset")
 
-        col1, col2 = st.columns(2)
+    #     # col1, col2 = st.columns(2)
 
-        with col1:
-            st.write(display_genre())
-        with col2:
-            st.write(genre_revenue())
-        st.write(genre_roi())
+    #     # with col1:
+    #     st.write(display_genre())
+    #     # with col2:
+    #     #     st.write(genre_revenue())
+    #     # st.write(genre_roi())
 
     elif options == "Earning":
         st.write("Visualualization based on Earnings")

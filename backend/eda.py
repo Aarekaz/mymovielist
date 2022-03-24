@@ -10,13 +10,15 @@ import numpy as np
 import pandas as pd
 import plotly
 import plotly.express as px
+import plotly.graph_objs as go
 import seaborn as sns
 import streamlit as st
 from chart_studio.tools import set_config_file
 from IPython.display import HTML, Image
 from scipy import stats
 from sklearn.dummy import DummyClassifier, DummyRegressor
-from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
+from sklearn.ensemble import (GradientBoostingClassifier,
+                              GradientBoostingRegressor)
 from sklearn.model_selection import train_test_split
 from wordcloud import STOPWORDS, WordCloud
 from xgboost import XGBClassifier, XGBRegressor
@@ -34,8 +36,7 @@ sns.set(font_scale=1.25)
 pd.set_option("display.max_colwidth", 50)
 
 
-
-# Data Wrangling    
+# Data Wrangling
 df = pd.read_csv("EDA_data/movies_metadata.csv")
 df = df.drop(["imdb_id"], axis=1)
 df[df["original_title"] != df["title"]][["title", "original_title"]].head()
@@ -70,7 +71,9 @@ overview_corpus = " ".join(df["overview"])
 def display_title_wordcloud():
     @st.cache
     def load_title():
-        title_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(title_corpus)
+        title_wordcloud = WordCloud(
+            stopwords=STOPWORDS, background_color="black", height=2000, width=4000
+        ).generate(title_corpus)
         title_array = title_wordcloud.to_array()
         return title_array
 
@@ -85,15 +88,16 @@ def display_title_wordcloud():
     )
 
 
-    
-
 def display_overview_wordcloud():
     @st.cache
     def load_overview():
-        overview_wordcloud = WordCloud(stopwords=STOPWORDS, background_color="black", height=2000, width=4000).generate(overview_corpus)
+        overview_wordcloud = WordCloud(
+            stopwords=STOPWORDS, background_color="black", height=2000, width=4000
+        ).generate(overview_corpus)
         overview_array = overview_wordcloud.to_array()
         return overview_array
-    overview_array = load_overview()   
+
+    overview_array = load_overview()
     # plt.figure(figsize=(16,8))
     # plt.imshow(overview_wordcloud)
     # plt.axis('off')
@@ -147,8 +151,9 @@ def display_fanchise():
         ).reset_index()
         frant_sort = fran_pivot.sort_values("sum", ascending=False).head(10)
         return frant_sort
-    fran_sort = disp_dffran()    
-    
+
+    fran_sort = disp_dffran()
+
     st.dataframe(fran_sort)
 
 
@@ -156,7 +161,7 @@ def display_fanchise():
 
 
 def display_language():
-    
+
     df["original_language"].drop_duplicates().shape[0]
     lang_df = pd.DataFrame(df["original_language"].value_counts())
     lang_df["language"] = lang_df.index
@@ -254,91 +259,108 @@ def number_by_year():
 # Genre
 
 
-def display_genre():
-    st.markdown("### Categorizarion by Genre")
-    df["genres"] = (
-        df["genres"]
-        .fillna("[]")
-        .apply(ast.literal_eval)
-        .apply(lambda x: [i["name"] for i in x] if isinstance(x, list) else [])
-    )
-    s = (
-        df.apply(lambda x: pd.Series(x["genres"]), axis=1)
-        .stack()
-        .reset_index(level=1, drop=True)
-    )
-    s.name = "genre"
-    gen_df = df.drop("genres", axis=1).join(s)
-    gen_df["genre"].value_counts().shape[0]
-    pop_gen = pd.DataFrame(gen_df["genre"].value_counts()).reset_index()
-    pop_gen.columns = ["genre", "movies"]
-    fig = plt.figure(figsize=(18, 8))
-    sns.barplot(x="genre", y="movies", data=pop_gen.head(15))
-    st.pyplot(fig)
-    st.markdown(
-        "**Drama** is the most commonly occurring genre with almost half the movies identifying itself as a drama film. **Comedy** comes in at a distant second with 25% of the movies having adequate doses of humor. Other major genres represented in the top 10 are Action, Horror, Crime, Mystery, Science Fiction, Animation and Fantasy."
-    )
-    # genres = ['Drama', 'Comedy', 'Thriller', 'Romance', 'Action', 'Horror', 'Crime', 'Adventure', 'Science Fiction', 'Mystery', 'Fantasy', 'Mystery', 'Animation']
-    # pop_gen_movies = gen_df[(gen_df['genre'].isin(genres)) & (gen_df['year'] >= 2000) & (gen_df['year'] <= 2017)]
-    # ctab = pd.crosstab([pop_gen_movies['year']], pop_gen_movies['genre']).apply(lambda x: x/x.sum(), axis=1)
-    # ctab[genres].plot(kind='line', stacked=False, colormap='jet', figsize=(12,8)).legend(loc='center left', bbox_to_anchor=(1, 0.5))
-    # plt.show()
-    # st.pyplot()
+# def grouppingGenres(genre):
+#     if (genre == "Biography") | (genre == "Documentary"):
+#         return "Bio-Documentary"
+#     elif genre == "Crime":
+#         return "Thriller"
+#     elif genre == "Fantasy":
+#         return "Adventure"
+#     elif genre == "Family":
+#         return "Adventure"
+#     else:
+#         return
 
 
-violin_genres = [
-    "Drama",
-    "Comedy",
-    "Thriller",
-    "Romance",
-    "Action",
-    "Horror",
-    "Crime",
-    "Science Fiction",
-    "Fantasy",
-    "Animation",
-]
+# def primaryGenre(movies):
+
+#     movies["primaryGenre"] = movies["genres"].apply(first_elem_csv)
+#     movies["primaryGenre"] = movies["primaryGenre"].apply(grouppingGenres)
+
+#     return
 
 
-def genre_revenue():
-    st.markdown("### Revenue by Genre")
-    df["genres"] = (
-        df["genres"]
-        .fillna("[]")
-        .apply(ast.literal_eval)
-        .apply(lambda x: [i["name"] for i in x] if isinstance(x, list) else [])
-    )
-    s = (
-        df.apply(lambda x: pd.Series(x["genres"]), axis=1)
-        .stack()
-        .reset_index(level=1, drop=True)
-    )
-    s.name = "genre"
-    gen_df = df.drop("genres", axis=1).join(s)
-    gen_df["genre"].value_counts().shape[0]
-    violin_movies = gen_df[(gen_df["genre"].isin(violin_genres))]
-    fig1 = plt.figure(figsize=(18, 8))
-    sns.barplot(x="genre", y="revenue", data=violin_movies)
-    st.pyplot(fig1)
-    st.markdown(
-        "**Animation** movies has the largest 25-75 range as well as the median revenue among all the genres plotted. **Fantasy** and **Science Fiction** have the second and third highest median revenue respectively. "
-    )
+# def display_genre():
+#     movies = pd.read_csv("EDA_data/movies.csv", sep=";")
+#     # Preparar el dataset
+#     movies = primaryGenre(movies)
 
+#     # Crear la tabla adecuada para el bar stick de plotly
+#     genres_by_year = (
+#         movies.groupby(["year", "primaryGenre"])[["primaryGenre"]].count().unstack().T
+#     )
+#     genres_by_year.index = genres_by_year.index.droplevel()
+#     genres_by_year.columns = genres_by_year.columns.astype(int)
 
-def genre_roi():
-    st.markdown("### Plot by ROI")
-    fig2 = plt.figure(figsize=(18, 8))
-    s.name = "genre"
-    gen_df = df.drop("genres", axis=1).join(s)
-    gen_df["genre"].value_counts().shape[0]
-    violin_movies = gen_df[(gen_df["genre"].isin(violin_genres))]
-    fig2, ax = plt.subplots(nrows=1, ncols=1, figsize=(15, 8))
-    sns.boxplot(x="genre", y="return", data=violin_movies, palette="muted", ax=ax)
-    ax.set_ylim([0, 10])
-    st.pyplot(fig2)
-    st.markdown(
-        "From the boxplot, it seems like **Animation** Movies tend to yield the highest returns on average. **Horror** Movies also tend to be a good bet. This is partially due to the nature of Horror movies being low budget compared to Fantasy Movies but being capable of generating very high revenues relative to its budget."
-    )
+#     # Ordenar el df por la nueva columna total
+#     genres_by_year["TOTAL"] = genres_by_year.sum(axis=1)
+#     genres_by_year.sort_values(by=["TOTAL"], inplace=True, ascending=False)
+#     genres_by_year = genres_by_year[genres_by_year["TOTAL"] > 1]
+
+#     x = genres_by_year.index
+
+#     trace1 = {
+#         "x": x,
+#         "y": genres_by_year[2014],
+#         "name": "2014",
+#         "type": "bar",
+#         "marker": {"color": "#F52E18"},
+#     }
+
+#     trace2 = {
+#         "x": x,
+#         "y": genres_by_year[2015],
+#         "name": "2015",
+#         "type": "bar",
+#         "marker": {"color": "#F52E18"},
+#     }
+
+#     trace3 = {
+#         "x": x,
+#         "y": genres_by_year[2016],
+#         "name": "2016",
+#         "type": "bar",
+#         "marker": {"color": "#F55418"},
+#     }
+
+#     trace4 = {
+#         "x": x,
+#         "y": genres_by_year[2017],
+#         "name": "2017",
+#         "type": "bar",
+#         "marker": {"color": "#F57A18"},
+#     }
+
+#     trace5 = {
+#         "x": x,
+#         "y": genres_by_year[2018],
+#         "name": "2018",
+#         "type": "bar",
+#         "marker": {"color": "#F59F18"},
+#     }
+
+#     trace6 = {
+#         "x": x,
+#         "y": genres_by_year[2019],
+#         "name": "2019",
+#         "type": "bar",
+#         "marker": {
+#             "color": "#F5C518"
+#         },  ## Colores 2019-2014: '#F5184F', '#F52E18', '#F55418', '#F57A18', '#F59F18', '#F5C518'
+#     }
+
+#     data = [trace6, trace5, trace4, trace3, trace2, trace1]
+
+#     layout = {
+#         "xaxis": {"title": ""},
+#         "font": {"family": "Roboto", "size": 16},
+#         "barmode": "stack",
+#         "template": "plotly_dark",
+#         "plot_bgcolor": "rgba(50,50,50,1)",
+#     }
+
+#     fig = go.Figure(data=data, layout=layout)
+#     return fig
 
 
 # Countries
