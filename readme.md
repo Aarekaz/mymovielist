@@ -59,8 +59,32 @@ The similarity values between items are measured by observing all the users who 
 
 
 
+## Screenshots
+
+### Frontend
+
+#### Home Page 
+![Home Page](/documentations/Screenshots/homebanner.png)
+![Home Page](/documentations/Screenshots/home2.png)
+
+#### Show Details
+![Show Details](/documentations/Screenshots/show_details.png)
+
+### Recommendor
+![Dashboard](/documentations/Screenshots/recommender_dashboard.png)
+
+#### User Based Reccomendation
+![User Based Reccomendation](/documentations/Screenshots/user_based_recommendation.png)
+
+#### Item Based Reccomendation
+
+![Item Based Reccomendation](/documentations/Screenshots/item_based_recomendation.png)
+
+
 ## Team Members
 
 - [Apurba Shrestha]("https://www.linkedin.com/in/apurbashrestha/")
 - [Prakriti Bista]("https://www.linkedin.com/in/itsmeprakriti/")
 - [Siddhartha Shrestha]("https://www.linkedin.com/in/siddhartha-shrestha-2ba58a21b/")
+
+
