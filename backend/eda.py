@@ -99,7 +99,7 @@ def display_overview_wordcloud():
 
     overview_array = load_overview()
     # plt.figure(figsize=(16,8))
-    # plt.imshow(overview_wordcloud)
+    # plt.imshow(overview_wordcloud
     # plt.axis('off')
     # plt.show()
     st.image(overview_array)
